@@ -6,7 +6,7 @@ import imutils
 from imutils import contours
 
 # read in the image and make it grey scale.
-berry_image = cv2.imread("berry_picture_light.jpg",)
+berry_image = cv2.imread("berry_picture.jpg",)
 
 print("Detecting berries....")
 
@@ -24,7 +24,7 @@ def hsv_color_params(color):
     upper_hue = []
     if color == 'black':
         lower_hue = np.array([0,0,0])
-        upper_hue = np.array([255,100,85])
+        upper_hue = np.array([255,100,88])
     elif color == 'white':
         lower_hue = np.array([0,0,0])
         upper_hue = np.array([0,0,255])
@@ -82,6 +82,7 @@ cv2.imshow("", berry_image)
 cv2.drawContours(berry_image,contour_list, -1,(0,255,0),2)
 # show the points that are detected
 cv2.imshow("Detected Berries", berry_image)
+cv2.imwrite("detected_berries.jpg", berry_image)
 print("")
 print("Click on a berry to start programming!")
 print("")
