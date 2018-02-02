@@ -35,10 +35,16 @@ class Window(QMainWindow):
         openFile.triggered.connect(self.file_Open)
         self.statusBar()
 
-        extract_action = QAction("Help", self)
-        extract_action.setShortcut("Ctrl+h")
-        extract_action.setStatusTip("Help for the berry interface")
-        extract_action.triggered.connect(self.help)
+#        help_window = QAction("Help", self)
+#        help_window.setShortcut("Ctrl+h")
+#        help_window.setStatusTip("Help for the berry interface")
+#        help_window.triggered.connect(self.help_window)
+        #self.newWindow = help_window(self)
+
+        self.pushButton = QPushButton("New Window", self)
+        self.pushButton.move(120, 120)
+        self.pushButton.clicked.connect(self.help_window)
+        self.newWindow = help(self)
 
         mainMenu = self.menuBar()
         fileMenu = mainMenu.addMenu("&File")
@@ -46,8 +52,8 @@ class Window(QMainWindow):
         fileMenu.addAction(openFile)
         fileMenu = mainMenu.addMenu("&Editor")
         fileMenu.addAction(openEditor)
-        fileMenu = mainMenu.addMenu("&Help")
-        fileMenu.addAction(extract_action)
+        #fileMenu = mainMenu.addMenu("&Help")
+        #fileMenu.addAction(help)
 
         self.setWindowTitle("Berry GUI")
         self.setGeometry(100,200,1280,775)
@@ -84,43 +90,23 @@ class Window(QMainWindow):
         self.toolBar = self.addToolBar("Editor")
         self.toolBar.addAction(extract_action_toolbar_berry)
 
+        extract_action_toolbar_berry = QAction(QIcon(""), "Set the image", self)
+        extract_action_toolbar_berry.triggered.connect(self.reset_background)
 
-
+        self.toolBar = self.addToolBar("Reset Background")
+        self.toolBar.addAction(extract_action_toolbar_berry)
 
 
         #background_image = QImage("berry_photo.jpg")
         self.layout = QGridLayout()
         #layout.addWidget(background_image)
 
-        label = QLabel(self)
-        pixmap = QPixmap('detected_berries.jpg')
-        #pixmap = QPixmap("berry_background.jpg")
-        label.setPixmap(pixmap)
-
-
-
-
-        label.resize(pixmap.width(), pixmap.height())
-        label.move(0,55)
-
-        self.layout.addWidget(label)
-
-
-
-
-        #self.berry_photo.setPixmap(self.pixmap)
-
-
-
-
-        print(pixmap.width(), pixmap.height())
-
-
         self.show()
 
 
 
-
+    def help_window(self):
+        self.newWindow.show()
 
     def quit(self):
         print("Quiting out, Thanks...")
@@ -172,11 +158,18 @@ class Window(QMainWindow):
 
 
     def reset_background(self):
+        self.layout = QGridLayout()
+        # layout.addWidget(background_image)
+
         label = QLabel(self)
-        #pixmap = QPixmap('detected_berries.jpg')
-        new_background = QPixmap("CRAZY.jpg")
-        label.setPixmap(new_background)
-        return new_background
+        pixmap = QPixmap('detected_berries.jpg')
+        # pixmap = QPixmap("berry_background.jpg")
+        label.setPixmap(pixmap)
+
+        label.resize(pixmap.width(), pixmap.height())
+        label.move(0, 55)
+
+        self.layout.addWidget(label)
 
 
 
@@ -184,13 +177,28 @@ class Window(QMainWindow):
         label.move(0,55)
 
         self.layout.addWidget(label)
+        self.show()
 
-    def help_window(self):
-        widget = QDialog(self)
-        ui = Ui_Help()
-        ui.setupUi(widget)
-        widget.exec_()
 
+class help(QMainWindow):
+    def __init__(self, parent=None):
+        super(help, self).__init__(parent)
+        #Setting a title, locating and sizing the window
+        self.title = 'Help'
+        self.left = 200
+        self.top = 200
+        self.width = 500
+        self.height = 500
+        self.setWindowTitle(self.title)
+        self.setGeometry(self.left, self.top, self.width, self.height)
+        self.textEdit = QTextEdit()
+        self.setCentralWidget(self.textEdit)
+        self.pushButton = QPushButton("Close Me", self)
+        self.pushButton.clicked.connect(self.on_pushButton_clicked)
+        self.pushButton.move(120,120)
+
+    def on_pushButton_clicked(self):
+        self.close()
 
 
 
