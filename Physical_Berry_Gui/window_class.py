@@ -3,7 +3,7 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 import text_editor_class
-from cv2 import *
+import cv2
 
 class Window(QMainWindow):
 
@@ -97,13 +97,21 @@ class Window(QMainWindow):
         self.toolBar.addAction(extract_action_toolbar_berry)
 
 
-        #background_image = QImage("berry_photo.jpg")
+        #background_image = QImage("detected_berries.jpg")
         self.layout = QGridLayout()
+        #self.reset_background
         #layout.addWidget(background_image)
+        #label = QLabel(self)
+        #pixmap = QPixmap('berry_background.jpg')
+        #label.setPixmap(pixmap)
+        #self.resize(pixmap.width(), pixmap.height())
+
+        self.reset_background()
+
+        #self.show()
+
 
         self.show()
-
-
 
     def help_window(self):
         self.newWindow.show()
@@ -118,12 +126,9 @@ class Window(QMainWindow):
         else:
             pass
 
-
     def editor(self):
         self.textEdit = QTextEdit()
         self.setCentralWidget(self.textEdit)
-
-
 
     def look_for_files(self):
         print("Looking for all of your files...")
@@ -144,26 +149,21 @@ class Window(QMainWindow):
         text_editor_class.main()
         print("Showing the Editor")
 
-
     def camera(self):
         # initialize the camera
-        cam = VideoCapture(0)  # 0 -> index of camera
+        cam = cv2.VideoCapture(0)  # 0 -> index of camera
         s, img = cam.read()
         if s:  # frame captured without any errors
             #namedWindow("Berry Snapper")
-            imshow("Berry Snapper", img)
-            waitKey(0)
-            destroyWindow("Berry Snapper")
-            imwrite("CRAZY.jpg", img)  # save image
+            cv2.imshow("Berry Snapper", img)
+            cv2.waitKey(0)
+            cv2.destroyWindow("Berry Snapper")
+            cv2.imwrite("CRAZY.jpg", img)  # save image
 
-
+    # This function pulls in the initial berry picture and iw will set it as the background of the Gui.
     def reset_background(self):
-        self.layout = QGridLayout()
-        # layout.addWidget(background_image)
-
         label = QLabel(self)
-        pixmap = QPixmap('detected_berries.jpg')
-        # pixmap = QPixmap("berry_background.jpg")
+        pixmap = QPixmap('berry_picture.jpg')
         label.setPixmap(pixmap)
 
         label.resize(pixmap.width(), pixmap.height())
@@ -171,10 +171,8 @@ class Window(QMainWindow):
 
         self.layout.addWidget(label)
 
-
-
         label.resize(pixmap.width(), pixmap.height())
-        label.move(0,55)
+        label.move(0, 55)
 
         self.layout.addWidget(label)
         self.show()
@@ -183,7 +181,8 @@ class Window(QMainWindow):
 class help(QMainWindow):
     def __init__(self, parent=None):
         super(help, self).__init__(parent)
-        #Setting a title, locating and sizing the window
+
+        # Setting a title, locating and sizing the window
         self.title = 'Help'
         self.left = 200
         self.top = 200
@@ -199,7 +198,6 @@ class help(QMainWindow):
 
     def on_pushButton_clicked(self):
         self.close()
-
 
 
 def main():
