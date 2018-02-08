@@ -13,6 +13,7 @@ class Window(QMainWindow):
         self.init_ui()
 
     def init_ui(self):
+        self.statusBar()
         extract_action = QAction("Save & Exit",self)
         extract_action.setShortcut("Ctrl+q")
         extract_action.setStatusTip("Leave the app")
@@ -33,13 +34,7 @@ class Window(QMainWindow):
         openFile.setShortcut("Ctrl+o")
         openFile.setStatusTip("Open File")
         openFile.triggered.connect(self.file_Open)
-        self.statusBar()
 
-#        help_window = QAction("Help", self)
-#        help_window.setShortcut("Ctrl+h")
-#        help_window.setStatusTip("Help for the berry interface")
-#        help_window.triggered.connect(self.help_window)
-        #self.newWindow = help_window(self)
 
         self.pushButton = QPushButton("New Window", self)
         self.pushButton.move(120, 120)
@@ -110,6 +105,7 @@ class Window(QMainWindow):
 
         #self.show()
 
+        self.button_over_berries()
 
         self.show()
 
@@ -175,29 +171,200 @@ class Window(QMainWindow):
         label.move(0, 55)
 
         self.layout.addWidget(label)
+
+        label = QLabel(self)
+        pixmap = QPixmap('cleaned_berry_boxes.png')
+        label.setPixmap(pixmap)
+
+        label.resize(pixmap.width(), pixmap.height())
+        label.move(0, 55)
+
+        self.layout.addWidget(label)
+
+        label.resize(pixmap.width(), pixmap.height())
+        label.move(0, 55)
+
+        self.layout.addWidget(label)
         self.show()
+
+    def button_over_berries(self):
+
+        self.pushButton = QPushButton("I am a berry!!", self)
+        self.pushButton.clicked.connect(self.openFileNameDialog)
+        self.pushButton.move(598,552)
+        self.pushButton.setVisible(True)
+        self.pushButton2 = QPushButton("I am a berry!!", self)
+        self.pushButton2.clicked.connect(self.openFileNameDialog)
+        self.pushButton2.move(836, 398)
+        self.pushButton2.setVisible(True)
+        self.pushButton3 = QPushButton("I am a berry!!", self)
+        self.pushButton3.clicked.connect(self.openFileNameDialog)
+        self.pushButton3.move(440, 363)
+        self.pushButton3.setVisible(True)
+        self.pushButton4 = QPushButton("I am a berry!!", self)
+        self.pushButton4.clicked.connect(self.openFileNameDialog)
+        self.pushButton4.move(632, 194)
+        self.pushButton4.setVisible(True)
+        #self.newWindow.show()
+
+    def on_pushButton_click(self):
+            self.newWindow.show()
+
+    def openFileNameDialog(self):
+        options = QFileDialog.Options()
+        options |= QFileDialog.DontUseNativeDialog
+        fileName, _ = QFileDialog.getOpenFileName(self,"sample_code_stub.txt")
+        self.show()
+        ## fileName = self.file_Open()
+        self.newWindow.show()
+        #openFile.triggered.connect(self.file_Open)
+        if fileName:
+            print(fileName)
+            #self.file_Open
 
 
 class help(QMainWindow):
     def __init__(self, parent=None):
         super(help, self).__init__(parent)
 
+        self.statusBar()
+        extract_action = QAction("Save & Exit", self)
+        extract_action.setShortcut("Ctrl+q")
+        extract_action.setStatusTip("Leave the app")
+        extract_action.triggered.connect(self.quit)
+
+        extract_action_edit = QAction("Show files", self)
+        extract_action_edit.setShortcut("Ctrl+f")
+        extract_action_edit.setStatusTip("Looking for files")
+        extract_action_edit.triggered.connect(self.quit)
+
+
+        openFile = QAction("Open File", self)
+        openFile.setShortcut("Ctrl+o")
+        openFile.setStatusTip("Open File")
+        openFile.triggered.connect(self.file_Open)
+
+
+        mainMenu = self.menuBar()
+        fileMenu = mainMenu.addMenu("&File")
+        fileMenu.addAction(extract_action)
+        fileMenu.addAction(openFile)
+
         # Setting a title, locating and sizing the window
-        self.title = 'Help'
+        self.title = 'Text Editor'
         self.left = 200
         self.top = 200
         self.width = 500
-        self.height = 500
+        self.height = 700
         self.setWindowTitle(self.title)
         self.setGeometry(self.left, self.top, self.width, self.height)
         self.textEdit = QTextEdit()
+
+
         self.setCentralWidget(self.textEdit)
+
         self.pushButton = QPushButton("Close Me", self)
         self.pushButton.clicked.connect(self.on_pushButton_clicked)
-        self.pushButton.move(120,120)
+        self.pushButton.move(400,600)
+        self.pushButton.setVisible(True)
 
     def on_pushButton_clicked(self):
         self.close()
+
+    def quit(self):
+        print("Quiting out, Thanks...")
+        choice = QMessageBox.question(self, "Close Application", "Are you sure you want to quit?",
+                                      QMessageBox.Yes | QMessageBox.No)
+        if choice == QMessageBox.Yes:
+            print("Quiting Berry GUI")
+            sys.exit()
+        else:
+            pass
+
+    def file_Open(self):
+
+        name, _ = QFileDialog.getOpenFileName(self, "Open File")
+
+        print(name)
+
+
+        self.editor()
+        with open(name, "r") as file:
+            text = file.read()
+            self.textEdit.setText(text)
+
+class code_editor(QMainWindow):
+    def __init__(self, parent=None):
+        super(code_editor, self).__init__(parent)
+        self.statusBar()
+        extract_action = QAction("Save & Exit", self)
+        extract_action.setShortcut("Ctrl+q")
+        extract_action.setStatusTip("Leave the app")
+        extract_action.triggered.connect(self.quit)
+
+        extract_action_edit = QAction("Show files", self)
+        extract_action_edit.setShortcut("Ctrl+f")
+        extract_action_edit.setStatusTip("Looking for files")
+        extract_action_edit.triggered.connect(self.quit)
+
+
+        openFile = QAction("Open File", self)
+        openFile.setShortcut("Ctrl+o")
+        openFile.setStatusTip("Open File")
+        openFile.triggered.connect(self.file_Open)
+
+        self.pushButton = QPushButton("New Window", self)
+        self.pushButton.move(120, 120)
+        self.pushButton.clicked.connect(self.help_window)
+        self.newWindow = help(self)
+
+        mainMenu = self.menuBar()
+        fileMenu = mainMenu.addMenu("&File")
+        fileMenu.addAction(extract_action)
+        fileMenu.addAction(openFile)
+
+        # Setting a title, locating and sizing the window
+        self.title = 'Code Editor'
+        self.left = 200
+        self.top = 200
+        self.width = 500
+        self.height = 900
+        self.setWindowTitle(self.title)
+        self.setGeometry(self.left, self.top, self.width, self.height)
+        self.textEdit = QTextEdit()
+
+        self.setCentralWidget(self.textEdit)
+
+        self.pushButton = QPushButton("Close Me", self)
+        self.pushButton.clicked.connect(self.on_pushButton_clicked)
+        self.pushButton.move(400,800)
+        self.pushButton.setVisible(True)
+
+    def on_pushButton_clicked(self):
+        self.close()
+
+    def quit(self):
+        print("Quiting out, Thanks...")
+        choice = QMessageBox.question(self, "Close Application", "Are you sure you want to quit?",
+                                      QMessageBox.Yes | QMessageBox.No)
+        if choice == QMessageBox.Yes:
+            print("Quiting Berry GUI")
+            sys.exit()
+        else:
+            pass
+
+    def file_Open(self):
+
+        name, _ = QFileDialog.getOpenFileName(self, "Open File")
+
+        print(name)
+
+
+        self.editor()
+        with open(name, "r") as file:
+            text = file.read()
+            self.textEdit.setText(text)
+
 
 
 def main():
@@ -209,33 +376,3 @@ def main():
 if __name__ == '__main__':
     main()
 
-
-    def home_window(self):
-        """
-        button1 = QPushButton("Find Berries")
-        button2 = QPushButton("Quit")
-        #label = QLabel("Something")
-
-        h_box = QHBoxLayout()
-        h_box.addStretch()
-        #h_box.addWidget(self.label)
-        h_box.addStretch()
-
-        v_box = QVBoxLayout()
-        v_box.addWidget(self.button1)
-        v_box.addWidget(self.button2)
-        v_box.addLayout(h_box)
-
-        self.setLayout(v_box)
-
-        button1.clicked.connect(self.button_click)
-        button2.clicked.connect(self.quit)
-        button1.move(0, 100)
-        button2.move(0, 300)
-        """
-
-        #self.show()
-
-        # def button_click(self):
-        # self.label.setText("Berries are up to Date")
-        # self.dialog.show()
