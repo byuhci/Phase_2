@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/window_class.py" line="146" mnemonic="3" />
+    <bookmark url="file://$PROJECT_DIR$/window_class.py" line="168" mnemonic="3" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1dd06b44-4f55-422e-a203-e04d4efecd6a" name="Default" comment="" />
@@ -13,56 +13,105 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main Gui.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Main Gui.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="748">
-              <caret line="83" column="55" lean-forward="false" selection-start-line="83" selection-start-column="55" selection-end-line="83" selection-end-column="55" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="window_class.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/window_class.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="939">
-              <caret line="293" column="39" lean-forward="true" selection-start-line="293" selection-start-column="39" selection-end-line="293" selection-end-column="39" />
-              <folding>
-                <element signature="e#4270#4342#0" expanded="false" />
-                <element signature="e#4382#4423#0" expanded="false" />
-                <element signature="e#4708#4768#0" expanded="false" />
-                <element signature="e#4800#5183#0" expanded="false" />
-                <element signature="e#11983#12056#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="open_window_test.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/open_window_test.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="35" column="37" lean-forward="true" selection-start-line="35" selection-start-column="37" selection-end-line="35" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="text_editor_class.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/text_editor_class.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1904">
-              <caret line="115" column="4" lean-forward="false" selection-start-line="115" selection-start-column="4" selection-end-line="115" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="MainGui.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/MainGui.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="357">
+                  <caret line="110" column="0" lean-forward="true" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#0#10#0" expanded="true" />
+                    <element signature="e#359#3510#0" expanded="false" />
+                    <element signature="e#3551#3967#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="trouble.jpg" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/trouble.jpg">
+              <provider selected="true" editor-type-id="images">
+                <state />
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="detected_berries.jpg" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/detected_berries.jpg">
+              <provider selected="true" editor-type-id="images">
+                <state />
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="detected_berries.png" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/detected_berries.png">
+              <provider selected="true" editor-type-id="images">
+                <state />
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="berry_background.jpg" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/berry_background.jpg">
+              <provider selected="true" editor-type-id="images">
+                <state />
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="window_class.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/window_class.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="867">
+                  <caret line="458" column="18" lean-forward="false" selection-start-line="458" selection-start-column="18" selection-end-line="458" selection-end-column="18" />
+                  <folding>
+                    <element signature="e#134#144#0" expanded="true" />
+                    <element signature="e#4260#4281#0" expanded="false" />
+                    <element signature="e#4311#4644#0" expanded="false" />
+                    <element signature="e#4676#4748#0" expanded="false" />
+                    <element signature="e#4788#4829#0" expanded="false" />
+                    <element signature="e#4865#5075#0" expanded="false" />
+                    <element signature="e#5114#5174#0" expanded="false" />
+                    <element signature="e#5206#5616#0" expanded="false" />
+                    <element signature="e#5756#6464#0" expanded="false" />
+                    <element signature="e#7753#7774#0" expanded="false" />
+                    <element signature="e#7818#8197#0" expanded="false" />
+                    <element signature="e#8154#8197#0" expanded="false" />
+                    <element signature="e#9657#11790#0" expanded="false" />
+                    <element signature="e#11828#14157#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="QWidget.py" pinned="false" current-in-tab="false">
+            <entry file="file://$USER_HOME$/.PyCharmCE2017.2/system/python_stubs/733106896/PyQt5/QtWidgets/QWidget.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="937">
+                  <caret line="498" column="8" lean-forward="false" selection-start-line="498" selection-start-column="8" selection-end-line="498" selection-end-column="8" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="test.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/../../BerryHost-capadetation/test.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="697">
+                  <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#10#34#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -85,8 +134,9 @@
         <option value="$PROJECT_DIR$/Blob_detection_bounding_box.py" />
         <option value="$PROJECT_DIR$/blob_detector_bounding_box.py" />
         <option value="$PROJECT_DIR$/test_test.py" />
-        <option value="$PROJECT_DIR$/window_class.py" />
         <option value="$PROJECT_DIR$/Main Gui.py" />
+        <option value="$PROJECT_DIR$/window_class.py" />
+        <option value="$PROJECT_DIR$/MainGui.py" />
       </list>
     </option>
   </component>
@@ -111,7 +161,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -119,11 +168,22 @@
               <item name="Physical_Berry_Gui" type="b2602c69:ProjectViewProjectNode" />
               <item name="Physical_Berry_Gui" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Physical_Berry_Gui" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Physical_Berry_Gui" type="462c0819:PsiDirectoryNode" />
+              <item name="bin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Physical_Berry_Gui" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Physical_Berry_Gui" type="462c0819:PsiDirectoryNode" />
+              <item name="Icons" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -149,23 +209,6 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.Main Gui">
-    <configuration name="Blob_detection_bounding_box" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Physical_Berry_Gui" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Blob_detection_bounding_box.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-    </configuration>
     <configuration name="Main Gui" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -178,7 +221,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Physical_Berry_Gui" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Main Gui.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\Casey\Documents\GitHub\Phase_2\Physical_Berry_Gui\MainGui.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -196,6 +239,23 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Physical_Berry_Gui" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/blob_detector_bounding_box.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../BerryHost-capadetation" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Physical_Berry_Gui" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../BerryHost-capadetation/test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -235,19 +295,19 @@
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.Blob_detection_bounding_box" />
-      <item index="1" class="java.lang.String" itemvalue="Python.blob_detector_bounding_box" />
-      <item index="2" class="java.lang.String" itemvalue="Python.test_test" />
-      <item index="3" class="java.lang.String" itemvalue="Python.Main Gui" />
-      <item index="4" class="java.lang.String" itemvalue="Python.window_class" />
+      <item index="0" class="java.lang.String" itemvalue="Python.blob_detector_bounding_box" />
+      <item index="1" class="java.lang.String" itemvalue="Python.test_test" />
+      <item index="2" class="java.lang.String" itemvalue="Python.Main Gui" />
+      <item index="3" class="java.lang.String" itemvalue="Python.window_class" />
+      <item index="4" class="java.lang.String" itemvalue="Python.test" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Python.Main Gui" />
-        <item index="1" class="java.lang.String" itemvalue="Python.test_test" />
-        <item index="2" class="java.lang.String" itemvalue="Python.window_class" />
-        <item index="3" class="java.lang.String" itemvalue="Python.blob_detector_bounding_box" />
-        <item index="4" class="java.lang.String" itemvalue="Python.Blob_detection_bounding_box" />
+        <item index="1" class="java.lang.String" itemvalue="Python.test" />
+        <item index="2" class="java.lang.String" itemvalue="Python.test_test" />
+        <item index="3" class="java.lang.String" itemvalue="Python.window_class" />
+        <item index="4" class="java.lang.String" itemvalue="Python.blob_detector_bounding_box" />
       </list>
     </recent_temporary>
   </component>
@@ -269,14 +329,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1576" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0828125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21189336" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21189336" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -301,18 +360,167 @@
           <url>file://$PROJECT_DIR$/blob_detector_bounding_box.py</url>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test.py</url>
+          <line>1</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="14" />
+      <option name="time" value="16" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Main Gui.py">
+    <entry file="file://$PROJECT_DIR$/MainGui.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="37" column="41" lean-forward="false" selection-start-line="37" selection-start-column="41" selection-end-line="37" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+            <element signature="e#359#3510#0" expanded="false" />
+            <element signature="e#3551#3967#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/detected_berries.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trouble.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/detected_berries.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/berry_background.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="94" lean-forward="true" selection-start-line="17" selection-start-column="94" selection-end-line="17" selection-end-column="94" />
+          <folding>
+            <element signature="e#10#34#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/window_class.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2176">
+          <caret line="157" column="24" lean-forward="false" selection-start-line="157" selection-start-column="24" selection-end-line="157" selection-end-column="24" />
+          <folding>
+            <element signature="e#134#144#0" expanded="true" />
+            <element signature="e#4260#4281#0" expanded="false" />
+            <element signature="e#4311#4644#0" expanded="false" />
+            <element signature="e#4676#4748#0" expanded="false" />
+            <element signature="e#4788#4829#0" expanded="false" />
+            <element signature="e#4865#5075#0" expanded="false" />
+            <element signature="e#5114#5174#0" expanded="false" />
+            <element signature="e#5206#5616#0" expanded="false" />
+            <element signature="e#5756#6464#0" expanded="false" />
+            <element signature="e#7753#7774#0" expanded="false" />
+            <element signature="e#7818#8197#0" expanded="false" />
+            <element signature="e#8154#8197#0" expanded="false" />
+            <element signature="e#9657#11790#0" expanded="false" />
+            <element signature="e#11828#14157#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/open_window_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="35" column="37" lean-forward="false" selection-start-line="35" selection-start-column="37" selection-end-line="35" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/text_editor_class.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1904">
+          <caret line="115" column="4" lean-forward="false" selection-start-line="115" selection-start-column="4" selection-end-line="115" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../BerryHost-capadetation/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="17" column="94" lean-forward="true" selection-start-line="16" selection-start-column="4" selection-end-line="17" selection-end-column="94" />
+          <folding>
+            <element signature="e#10#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MainGui.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+            <element signature="e#359#3510#0" expanded="false" />
+            <element signature="e#3551#3967#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/window_class.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2176">
+          <caret line="157" column="24" lean-forward="false" selection-start-line="157" selection-start-column="24" selection-end-line="157" selection-end-column="24" />
+          <folding>
+            <element signature="e#134#144#0" expanded="true" />
+            <element signature="e#4260#4281#0" expanded="false" />
+            <element signature="e#4311#4644#0" expanded="false" />
+            <element signature="e#4676#4748#0" expanded="false" />
+            <element signature="e#4788#4829#0" expanded="false" />
+            <element signature="e#4865#5075#0" expanded="false" />
+            <element signature="e#5114#5174#0" expanded="false" />
+            <element signature="e#5206#5616#0" expanded="false" />
+            <element signature="e#5756#6464#0" expanded="false" />
+            <element signature="e#7753#7774#0" expanded="false" />
+            <element signature="e#7818#8197#0" expanded="false" />
+            <element signature="e#8154#8197#0" expanded="false" />
+            <element signature="e#9657#11790#0" expanded="false" />
+            <element signature="e#11828#14157#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/open_window_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="35" column="37" lean-forward="true" selection-start-line="35" selection-start-column="37" selection-end-line="35" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/text_editor_class.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1904">
+          <caret line="115" column="4" lean-forward="false" selection-start-line="115" selection-start-column="4" selection-end-line="115" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MainGui.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1326">
           <caret line="84" column="0" lean-forward="false" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
+            <element signature="e#359#3510#0" expanded="false" />
+            <element signature="e#3551#3967#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -343,28 +551,21 @@
         <state relative-caret-position="2380">
           <caret line="205" column="41" lean-forward="true" selection-start-line="205" selection-start-column="41" selection-end-line="205" selection-end-column="41" />
           <folding>
-            <element signature="e#4270#4342#0" expanded="false" />
-            <element signature="e#4382#4423#0" expanded="false" />
-            <element signature="e#4708#4768#0" expanded="false" />
-            <element signature="e#4800#5183#0" expanded="false" />
-            <element signature="e#11983#12056#0" expanded="false" />
+            <element signature="e#134#144#0" expanded="true" />
+            <element signature="e#4260#4281#0" expanded="false" />
+            <element signature="e#4311#4644#0" expanded="false" />
+            <element signature="e#4676#4748#0" expanded="false" />
+            <element signature="e#4788#4829#0" expanded="false" />
+            <element signature="e#4865#5075#0" expanded="false" />
+            <element signature="e#5114#5174#0" expanded="false" />
+            <element signature="e#5206#5616#0" expanded="false" />
+            <element signature="e#5756#6464#0" expanded="false" />
+            <element signature="e#7753#7774#0" expanded="false" />
+            <element signature="e#7818#8197#0" expanded="false" />
+            <element signature="e#8154#8197#0" expanded="false" />
+            <element signature="e#9657#11790#0" expanded="false" />
+            <element signature="e#11828#14157#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/open_window_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="35" column="37" lean-forward="true" selection-start-line="35" selection-start-column="37" selection-end-line="35" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/text_editor_class.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1904">
-          <caret line="115" column="4" lean-forward="false" selection-start-line="115" selection-start-column="4" selection-end-line="115" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -378,26 +579,118 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/window_class.py">
+    <entry file="file://$PROJECT_DIR$/trouble.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/detected_berries.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flatberry.png" />
+    <entry file="file://$PROJECT_DIR$/berry_background.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="939">
-          <caret line="293" column="39" lean-forward="true" selection-start-line="293" selection-start-column="39" selection-end-line="293" selection-end-column="39" />
+        <state relative-caret-position="289">
+          <caret line="17" column="94" lean-forward="false" selection-start-line="17" selection-start-column="94" selection-end-line="17" selection-end-column="94" />
           <folding>
-            <element signature="e#4270#4342#0" expanded="false" />
-            <element signature="e#4382#4423#0" expanded="false" />
-            <element signature="e#4708#4768#0" expanded="false" />
-            <element signature="e#4800#5183#0" expanded="false" />
-            <element signature="e#11983#12056#0" expanded="false" />
+            <element signature="e#10#34#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Main Gui.py">
+    <entry file="file://$PROJECT_DIR$/open_window_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="83" column="55" lean-forward="false" selection-start-line="83" selection-start-column="55" selection-end-line="83" selection-end-column="55" />
+        <state relative-caret-position="561">
+          <caret line="35" column="37" lean-forward="false" selection-start-line="35" selection-start-column="37" selection-end-line="35" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/text_editor_class.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1071">
+          <caret line="115" column="4" lean-forward="false" selection-start-line="115" selection-start-column="4" selection-end-line="115" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/detected_berries.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../BerryHost-capadetation/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+          <folding>
+            <element signature="e#10#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharmCE2017.2/system/python_stubs/733106896/PyQt5/QtGui/QPaintDevice.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="816">
+          <caret line="48" column="8" lean-forward="false" selection-start-line="48" selection-start-column="8" selection-end-line="48" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharmCE2017.2/system/python_stubs/733106896/PyQt5/QtWidgets/QWidget.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="937">
+          <caret line="498" column="8" lean-forward="false" selection-start-line="498" selection-start-column="8" selection-end-line="498" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharmCE2017.2/system/python_stubs/733106896/PyQt5/QtWidgets/QMainWindow.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="784">
+          <caret line="186" column="8" lean-forward="false" selection-start-line="186" selection-start-column="8" selection-end-line="186" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/window_class.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="867">
+          <caret line="458" column="18" lean-forward="false" selection-start-line="458" selection-start-column="18" selection-end-line="458" selection-end-column="18" />
+          <folding>
+            <element signature="e#134#144#0" expanded="true" />
+            <element signature="e#4260#4281#0" expanded="false" />
+            <element signature="e#4311#4644#0" expanded="false" />
+            <element signature="e#4676#4748#0" expanded="false" />
+            <element signature="e#4788#4829#0" expanded="false" />
+            <element signature="e#4865#5075#0" expanded="false" />
+            <element signature="e#5114#5174#0" expanded="false" />
+            <element signature="e#5206#5616#0" expanded="false" />
+            <element signature="e#5756#6464#0" expanded="false" />
+            <element signature="e#7753#7774#0" expanded="false" />
+            <element signature="e#7818#8197#0" expanded="false" />
+            <element signature="e#8154#8197#0" expanded="false" />
+            <element signature="e#9657#11790#0" expanded="false" />
+            <element signature="e#11828#14157#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MainGui.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="110" column="0" lean-forward="true" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
+            <element signature="e#359#3510#0" expanded="false" />
+            <element signature="e#3551#3967#0" expanded="false" />
           </folding>
         </state>
       </provider>

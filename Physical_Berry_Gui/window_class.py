@@ -1,9 +1,22 @@
+
+## Gui Element for the link between worlds project:
+    # Written by casey walker
+    # all elements in the gui are contained here.
+
 import sys
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 import text_editor_class
 import cv2
+from python_src import *
+from python_src.berry_api import *
+from python_src.berry_factory import berry_factory
+import sys
+from time import sleep
+import MainGui
+
+import random
 
 class Window(QMainWindow):
 
@@ -13,6 +26,11 @@ class Window(QMainWindow):
         self.init_ui()
 
     def init_ui(self):
+
+        icons_path = "icons/"
+
+        self.setWindowTitle("Berry GUI")
+        self.setGeometry(100,200,1280,775)
         self.statusBar()
         extract_action = QAction("Save & Exit",self)
         extract_action.setShortcut("Ctrl+q")
@@ -50,31 +68,31 @@ class Window(QMainWindow):
         #fileMenu = mainMenu.addMenu("&Help")
         #fileMenu.addAction(help)
 
-        self.setWindowTitle("Berry GUI")
-        self.setGeometry(100,200,1280,775)
-        #self.button1 = QPushButton()
-        #self.button2 = QPushButton()
 
-        self.setWindowIcon(QIcon("berry_icon.png"))
+
+
+        self.setWindowIcon(QIcon(icons_path+"berry_icon.png"))
         #self.home_window()
 
         # Toolbars initialized here
         # toolbar menu icon set here
         # Triggering actions are assigned here
-        extract_action_toolbar_berry = QAction(QIcon("flatberry.png"), "Connect to the berries", self)
+
+
+        extract_action_toolbar_berry = QAction(QIcon(icons_path+"flatberry.png"), "Connect to the berries", self)
         extract_action_toolbar_berry.triggered.connect(self.close)
 
         self.toolBar = self.addToolBar("BeRRY")
         self.toolBar.addAction(extract_action_toolbar_berry)
 
-        extract_action_toolbar_berry = QAction(QIcon("camera.png"), "Take Picture Using Webcam", self)
+        extract_action_toolbar_berry = QAction(QIcon(icons_path+"camera.png"), "Take Picture Using Webcam", self)
         extract_action_toolbar_berry.triggered.connect(self.camera)
 
         self.toolBar = self.addToolBar("Camera toolbar")
         self.toolBar.addAction(extract_action_toolbar_berry)
 
-        extract_action_toolbar_berry = QAction(QIcon("lights.png"), "Flashes the lights", self)
-        extract_action_toolbar_berry.triggered.connect(self.close)
+        extract_action_toolbar_berry = QAction(QIcon(icons_path+"lights.png"), "Flashes the lights", self)
+        extract_action_toolbar_berry.triggered.connect(self.light_sequence)
 
         self.toolBar = self.addToolBar("Lights toolbar")
         self.toolBar.addAction(extract_action_toolbar_berry)
@@ -106,6 +124,10 @@ class Window(QMainWindow):
         #self.show()
 
         self.button_over_berries()
+
+        self.setMouseTracking(True)
+        self.mouseMoveEvent(QEvent.MouseMove)
+
 
         self.show()
 
@@ -156,6 +178,8 @@ class Window(QMainWindow):
             cv2.destroyWindow("Berry Snapper")
             cv2.imwrite("CRAZY.jpg", img)  # save image
 
+            cv2.waitKey()
+
     # This function pulls in the initial berry picture and iw will set it as the background of the Gui.
     def reset_background(self):
         label = QLabel(self)
@@ -189,6 +213,16 @@ class Window(QMainWindow):
 
     def button_over_berries(self):
 
+
+        # button placement is hard coded.
+        # recover position of the berries and set the buttons there.
+        for points in MainGui.contour_list:
+            self.pushButton = QPushButton("I am a berry!!", self)
+            self.pushButton.clicked.connect(self.openFileNameDialog)
+            self.pushButton.move(x, y)
+
+
+
         self.pushButton = QPushButton("I am a berry!!", self)
         self.pushButton.clicked.connect(self.openFileNameDialog)
         self.pushButton.move(598,552)
@@ -221,6 +255,59 @@ class Window(QMainWindow):
         if fileName:
             print(fileName)
             #self.file_Open
+
+    def mouseMoveEvent(self, event):
+        x = 0
+        y = 0
+
+        x = event.x()
+        y = event.y()
+
+        mouse_position = "x: {0}, y: {Y}".format(x, y)
+
+        print(mouse_position)
+        self.statusBar().showMessgae(x + y)
+
+
+
+    def light_sequence(self):
+        # This function will run through the lights identifying the berries.
+        berry_list = []
+        init_host(sys.argv)
+
+        berry_list = get_berry_list()
+        berries = [berry_factory('Name Your Berry', berry[0], berry[1]) for berry in berry_list]
+
+        # what are these two for????????
+        btn = None
+        led = None
+
+        for berry in berries:
+            print('name: {}, type: {}, guid: {}'.format(berry.name, berry.berry_type, berry.addr))
+            if berry.berry_type == 'Button':
+                btn = berry
+            if berry.berry_type == 'RGB':
+                led = berry
+
+
+        # loops forever, make it walk through the sequence once getting all of the berries.
+        try:
+            v = 0
+            i = 0
+            while berry_list<len(berries):
+                berries[i].set_status_led(v)
+                i = (i + 1) % len(berries)
+                v = berry_list.randint(0, 1)
+                if btn.state == 1:
+                    led.color = [150, 150, 150]
+                else:
+                    led.color = [0, 0, 0]
+                sleep(1)
+        except:
+            print('End')
+
+
+
 
 
 class help(QMainWindow):
@@ -371,6 +458,7 @@ def main():
     app = QApplication(sys.argv)
     gui = Window()
     sys.exit(app.exec_())
+
 
 
 if __name__ == '__main__':
