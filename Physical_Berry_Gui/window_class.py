@@ -15,6 +15,8 @@ from python_src.berry_factory import berry_factory
 import sys
 from time import sleep
 import MainGui
+from detect_berries_in_image import berry_detection
+
 
 import random
 
@@ -126,7 +128,8 @@ class Window(QMainWindow):
         self.button_over_berries()
 
         self.setMouseTracking(True)
-        self.mouseMoveEvent(QEvent.MouseMove)
+        self.mousePressEvent(self)
+        #self.mouse_position_tracker(self)
 
 
         self.show()
@@ -256,18 +259,12 @@ class Window(QMainWindow):
             print(fileName)
             #self.file_Open
 
-    def mouseMoveEvent(self, event):
-        x = 0
-        y = 0
-
-        x = event.x()
-        y = event.y()
-
-        mouse_position = "x: {0}, y: {Y}".format(x, y)
-
-        print(mouse_position)
-        self.statusBar().showMessgae(x + y)
-
+    def mousePressEvent(self, QMouseEvent):
+        print(QMouseEvent.pos())
+        global berry_box_contour_list
+        print(berry_box_contour_list)
+        #if (click_x - bound1x) * (click_x - bound2x) <= 0 and (click_y - bound1y) * (click_y - bound2y) <= 0:
+        #    print("click inside of the berry box")
 
 
     def light_sequence(self):
