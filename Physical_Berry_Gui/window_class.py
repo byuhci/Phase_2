@@ -8,7 +8,7 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 import text_editor_class
-import cv2
+from cv2 import *
 from python_src import *
 from python_src.berry_api import *
 from python_src.berry_factory import berry_factory
@@ -16,16 +16,21 @@ import sys
 from time import sleep
 import MainGui
 from detect_berries_in_image import berry_detection
+import numpy as np
 
 
 import random
 
 class Window(QMainWindow):
 
+    OFFSET_FOR_THE_IMAGE = 55
+
     def __init__(self):
         super().__init__()
-
+        self.berry_detection_bounding_box = None
+        self.berry_image = 0
         self.init_ui()
+
 
     def init_ui(self):
 
@@ -172,6 +177,10 @@ class Window(QMainWindow):
 
     def camera(self):
         # initialize the camera
+
+        self.berry_detection_bounding_box = berry_detection()
+
+        """
         cam = cv2.VideoCapture(0)  # 0 -> index of camera
         s, img = cam.read()
         if s:  # frame captured without any errors
@@ -181,8 +190,10 @@ class Window(QMainWindow):
             cv2.destroyWindow("Berry Snapper")
             cv2.imwrite("CRAZY.jpg", img)  # save image
 
-            cv2.waitKey()
+            self.berry_detection_bounding_box = berry_detection()
 
+            cv2.waitKey()
+        """
     # This function pulls in the initial berry picture and iw will set it as the background of the Gui.
     def reset_background(self):
         label = QLabel(self)
@@ -190,12 +201,12 @@ class Window(QMainWindow):
         label.setPixmap(pixmap)
 
         label.resize(pixmap.width(), pixmap.height())
-        label.move(0, 55)
+        label.move(0, self.OFFSET_FOR_THE_IMAGE)
 
         self.layout.addWidget(label)
 
         label.resize(pixmap.width(), pixmap.height())
-        label.move(0, 55)
+        label.move(0, self.OFFSET_FOR_THE_IMAGE)
 
         self.layout.addWidget(label)
 
@@ -204,12 +215,12 @@ class Window(QMainWindow):
         label.setPixmap(pixmap)
 
         label.resize(pixmap.width(), pixmap.height())
-        label.move(0, 55)
+        label.move(0, self.OFFSET_FOR_THE_IMAGE)
 
         self.layout.addWidget(label)
 
         label.resize(pixmap.width(), pixmap.height())
-        label.move(0, 55)
+        label.move(0, self.OFFSET_FOR_THE_IMAGE)
 
         self.layout.addWidget(label)
         self.show()
@@ -260,11 +271,22 @@ class Window(QMainWindow):
             #self.file_Open
 
     def mousePressEvent(self, QMouseEvent):
-        print(QMouseEvent.pos())
-        global berry_box_contour_list
-        print(berry_box_contour_list)
-        #if (click_x - bound1x) * (click_x - bound2x) <= 0 and (click_y - bound1y) * (click_y - bound2y) <= 0:
-        #    print("click inside of the berry box")
+
+        # I need to get the list here to get the click-able areas,but it is proving difficult.
+        click_x = QMouseEvent.pos().x()
+        click_y = QMouseEvent.pos().y() - self.OFFSET_FOR_THE_IMAGE
+        print(click_x,click_y)
+        if self.berry_detection_bounding_box is None:
+            print("no berries baby")
+            return
+
+        for x, y, w, h in self.berry_detection_bounding_box:
+            # thank kristian for this nonsense
+            if (click_x - x) * (click_x - (x+w)) <= 0 and (click_y - y) * (click_y - (y+h)) <= 0:
+                print("click inside of the berry box")
+        print("Done")
+
+    #berry_image = np.zeroes(self.berry_image.shape, dtype="uibt8")
 
 
     def light_sequence(self):
