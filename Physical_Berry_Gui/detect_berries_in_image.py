@@ -7,6 +7,7 @@ import numpy as np
 
 def berry_detection():
     contour_list = []
+
     berry_image = cv2.imread("berry_picture.jpg")
 
     berry_image_copied = berry_image
@@ -68,8 +69,8 @@ def berry_detection():
             print("Y = ",cY)
 
 
-            cv2.putText(berry_image, "Berry {}".format(berry_id), (cX, cY - 0), cv2.FONT_HERSHEY_PLAIN, 1,
-                        (255, 255, 255), 2)
+            #cv2.putText(berry_image, "Berry {}".format(berry_id), (cX, cY - 0), cv2.FONT_HERSHEY_PLAIN, 1,
+                        #(255, 255, 255), 2)
 
     print(berry_id, " berries detected in image!")
 

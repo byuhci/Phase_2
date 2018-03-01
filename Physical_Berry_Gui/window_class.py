@@ -17,9 +17,9 @@ from time import sleep
 import MainGui
 from detect_berries_in_image import berry_detection
 import numpy as np
-
-
+from light_seeker import light_seeker
 import random
+
 
 class Window(QMainWindow):
 
@@ -28,7 +28,8 @@ class Window(QMainWindow):
     def __init__(self):
         super().__init__()
         self.berry_detection_bounding_box = None
-        self.berry_image = 0
+        self.berry_image = None
+        self.berry_image_difference = None
         self.init_ui()
 
 
@@ -116,21 +117,11 @@ class Window(QMainWindow):
         self.toolBar = self.addToolBar("Reset Background")
         self.toolBar.addAction(extract_action_toolbar_berry)
 
-
-        #background_image = QImage("detected_berries.jpg")
         self.layout = QGridLayout()
-        #self.reset_background
-        #layout.addWidget(background_image)
-        #label = QLabel(self)
-        #pixmap = QPixmap('berry_background.jpg')
-        #label.setPixmap(pixmap)
-        #self.resize(pixmap.width(), pixmap.height())
 
         self.reset_background()
 
         #self.show()
-
-        self.button_over_berries()
 
         self.setMouseTracking(True)
         self.mousePressEvent(self)
@@ -180,22 +171,24 @@ class Window(QMainWindow):
 
         self.berry_detection_bounding_box = berry_detection()
 
-        """
+
         cam = cv2.VideoCapture(0)  # 0 -> index of camera
         s, img = cam.read()
         if s:  # frame captured without any errors
             #namedWindow("Berry Snapper")
-            cv2.imshow("Berry Snapper", img)
+            img = cv2.imshow("Berry Snapper", img)
+            #img = cv2.resize(img, None, 2,2, interpolation=cv2.INTER_AREA)
             cv2.waitKey(0)
             cv2.destroyWindow("Berry Snapper")
             cv2.imwrite("CRAZY.jpg", img)  # save image
-
+            self.berry_image = img
             self.berry_detection_bounding_box = berry_detection()
 
             cv2.waitKey()
-        """
+
     # This function pulls in the initial berry picture and iw will set it as the background of the Gui.
     def reset_background(self):
+
         label = QLabel(self)
         pixmap = QPixmap('berry_picture.jpg')
         label.setPixmap(pixmap)
@@ -225,35 +218,6 @@ class Window(QMainWindow):
         self.layout.addWidget(label)
         self.show()
 
-    def button_over_berries(self):
-
-
-        # button placement is hard coded.
-        # recover position of the berries and set the buttons there.
-        for points in MainGui.contour_list:
-            self.pushButton = QPushButton("I am a berry!!", self)
-            self.pushButton.clicked.connect(self.openFileNameDialog)
-            self.pushButton.move(x, y)
-
-
-
-        self.pushButton = QPushButton("I am a berry!!", self)
-        self.pushButton.clicked.connect(self.openFileNameDialog)
-        self.pushButton.move(598,552)
-        self.pushButton.setVisible(True)
-        self.pushButton2 = QPushButton("I am a berry!!", self)
-        self.pushButton2.clicked.connect(self.openFileNameDialog)
-        self.pushButton2.move(836, 398)
-        self.pushButton2.setVisible(True)
-        self.pushButton3 = QPushButton("I am a berry!!", self)
-        self.pushButton3.clicked.connect(self.openFileNameDialog)
-        self.pushButton3.move(440, 363)
-        self.pushButton3.setVisible(True)
-        self.pushButton4 = QPushButton("I am a berry!!", self)
-        self.pushButton4.clicked.connect(self.openFileNameDialog)
-        self.pushButton4.move(632, 194)
-        self.pushButton4.setVisible(True)
-        #self.newWindow.show()
 
     def on_pushButton_click(self):
             self.newWindow.show()
@@ -284,6 +248,7 @@ class Window(QMainWindow):
             # thank kristian for this nonsense
             if (click_x - x) * (click_x - (x+w)) <= 0 and (click_y - y) * (click_y - (y+h)) <= 0:
                 print("click inside of the berry box")
+                self.newWindow.show()
         print("Done")
 
     #berry_image = np.zeroes(self.berry_image.shape, dtype="uibt8")
@@ -297,9 +262,10 @@ class Window(QMainWindow):
         berry_list = get_berry_list()
         berries = [berry_factory('Name Your Berry', berry[0], berry[1]) for berry in berry_list]
 
-        # what are these two for????????
         btn = None
         led = None
+        slider = None
+        knob = None
 
         for berry in berries:
             print('name: {}, type: {}, guid: {}'.format(berry.name, berry.berry_type, berry.addr))
@@ -307,32 +273,53 @@ class Window(QMainWindow):
                 btn = berry
             if berry.berry_type == 'RGB':
                 led = berry
+                led.color = [0,0,0]
+            if berry.berry_type == 'Slider':
+                slider = berry
+            if berry.berry_type == 'Knob':
+                knob = berry
+            if berry.berry_type == 'Beeper':
+                beeper = berry
 
+        for berry in berries:
+            led.color = [0,0,0]
+            print(berry)
+            print("next berry : \n")
+            berry.set_status_led(1)
+            image_difference = light_seeker()
 
-        # loops forever, make it walk through the sequence once getting all of the berries.
-        try:
-            v = 0
-            i = 0
-            while berry_list<len(berries):
-                berries[i].set_status_led(v)
-                i = (i + 1) % len(berries)
-                v = berry_list.randint(0, 1)
-                if btn.state == 1:
-                    led.color = [150, 150, 150]
-                else:
-                    led.color = [0, 0, 0]
-                sleep(1)
-        except:
-            print('End')
+            image_difference
+            sleep(2)
 
+            berry.set_status_led(0)
+            #berry_detection()
 
+        #
+        # # loops forever, make it walk through the sequence once getting all of the berries.
+        # try:
+        #     v = 0
+        #     i = 0
+        #     while berry_list<len(berries):
+        #         berries[i].set_status_led(v)
+        #         i = (i + 1) % len(berries)
+        #         v = berry_list.randint(0, 1)
+        #         if btn.state == 1:
+        #             led.color = [150, 150, 150]
+        #         else:
+        #             led.color = [0, 0, 0]
+        #         sleep(1)
+        # """
+        # except:
+        #     print('End')
 
 
 
 class help(QMainWindow):
     def __init__(self, parent=None):
         super(help, self).__init__(parent)
-
+        #init_host(argv)
+        berry_list = get_berry_list()
+        print(berry_list)
         self.statusBar()
         extract_action = QAction("Save & Exit", self)
         extract_action.setShortcut("Ctrl+q")
@@ -374,6 +361,36 @@ class help(QMainWindow):
         self.pushButton.move(400,600)
         self.pushButton.setVisible(True)
 
+
+    def main(self,argv):
+        init_host(argv)
+        berry_list = get_berry_list()
+        berries = [berry_factory('yo', berry[0], berry[1]) for berry in berry_list]
+
+        btn = None
+        led = None
+        for berry in berries:
+            print('name: {}, type: {}, guid: {}'.format(berry.name, berry.berry_type, berry.addr))
+            if berry.berry_type == 'Button':
+                btn = berry
+            if berry.berry_type == 'RGB':
+                led = berry
+
+        try:
+            v = 0
+            i = 0
+            while True:
+                berries[i].set_status_led(v)
+                i = (i + 1) % len(berries)
+                v = random.randint(0, 1)
+                if btn.state == 1:
+                    led.color = [150, 150, 150]
+                else:
+                    led.color = [0, 0, 0]
+                sleep(.01)
+        except:
+            print('End')
+
     def on_pushButton_clicked(self):
         self.close()
 
@@ -398,7 +415,7 @@ class help(QMainWindow):
         with open(name, "r") as file:
             text = file.read()
             self.textEdit.setText(text)
-
+"""
 class code_editor(QMainWindow):
     def __init__(self, parent=None):
         super(code_editor, self).__init__(parent)
@@ -470,7 +487,7 @@ class code_editor(QMainWindow):
         with open(name, "r") as file:
             text = file.read()
             self.textEdit.setText(text)
-
+"""
 
 
 def main():
