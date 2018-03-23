@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/window_class.py" line="167" mnemonic="3" />
+    <bookmark url="file://$PROJECT_DIR$/window_class.py" line="172" mnemonic="3" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1dd06b44-4f55-422e-a203-e04d4efecd6a" name="Default" comment="" />
@@ -19,8 +19,8 @@
           <file leaf-file-name="MainGui.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/MainGui.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="799">
-                  <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="48" selection-end-column="10" />
+                <state relative-caret-position="867">
+                  <caret line="51" column="0" lean-forward="true" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
                   <folding>
                     <element signature="e#0#10#0" expanded="true" />
                   </folding>
@@ -28,53 +28,45 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="window_class.py" pinned="false" current-in-tab="false">
+          <file leaf-file-name="window_class.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/window_class.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2176">
-                  <caret line="291" column="20" lean-forward="false" selection-start-line="291" selection-start-column="20" selection-end-line="291" selection-end-column="20" />
+                <state relative-caret-position="1068">
+                  <caret line="500" column="0" lean-forward="true" selection-start-line="500" selection-start-column="0" selection-end-line="500" selection-end-column="0" />
                   <folding>
-                    <element signature="e#134#144#0" expanded="true" />
-                    <element signature="e#6885#7264#0" expanded="false" />
-                    <element signature="e#7221#7264#0" expanded="false" />
+                    <element signature="e#234#244#0" expanded="true" />
+                    <element signature="e#991#4332#0" expanded="false" />
+                    <element signature="e#4369#4390#0" expanded="false" />
+                    <element signature="e#4420#4753#0" expanded="false" />
+                    <element signature="e#4785#4857#0" expanded="false" />
+                    <element signature="e#4897#4938#0" expanded="false" />
+                    <element signature="e#4974#5184#0" expanded="false" />
+                    <element signature="e#5223#5283#0" expanded="false" />
+                    <element signature="e#5315#6016#0" expanded="false" />
+                    <element signature="e#6068#6339#0" expanded="false" />
+                    <element signature="e#6488#7286#0" expanded="false" />
+                    <element signature="e#7336#7357#0" expanded="false" />
+                    <element signature="e#7401#7780#0" expanded="false" />
+                    <element signature="e#7737#7780#0" expanded="false" />
+                    <element signature="e#7835#8492#0" expanded="false" />
+                    <element signature="e#8602#10134#0" expanded="false" />
+                    <element signature="e#10167#13290#0" expanded="false" />
+                    <element signature="e#13291#15664#1" expanded="false" />
+                    <element signature="e#15683#15756#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="button_class.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/button_class.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="cleaned_berry_boxes.png" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/cleaned_berry_boxes.png">
-              <provider selected="true" editor-type-id="images">
-                <state />
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="light_seeker.py" pinned="false" current-in-tab="true">
+          <file leaf-file-name="light_seeker.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/light_seeker.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="85">
-                  <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="17" selection-end-column="32" />
+                <state relative-caret-position="340">
+                  <caret line="20" column="32" lean-forward="true" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
                   <folding>
                     <element signature="e#0#17#0" expanded="true" />
                   </folding>
                 </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="CRAZY.jpg" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/CRAZY.jpg">
-              <provider selected="true" editor-type-id="images">
-                <state />
               </provider>
             </entry>
           </file>
@@ -97,7 +89,7 @@
           <file leaf-file-name="test.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/test.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="238">
+                <state relative-caret-position="153">
                   <caret line="14" column="3" lean-forward="false" selection-start-line="14" selection-start-column="3" selection-end-line="15" selection-end-column="14" />
                   <folding>
                     <element signature="e#10#34#0" expanded="true" />
@@ -106,15 +98,32 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="detect_berries_in_image.py" pinned="false" current-in-tab="true">
+          <file leaf-file-name="detect_berries_in_image.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/detect_berries_in_image.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1513">
-                  <caret line="89" column="22" lean-forward="false" selection-start-line="81" selection-start-column="4" selection-end-line="89" selection-end-column="22" />
+                <state relative-caret-position="-655">
+                  <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
                   <folding>
                     <element signature="e#0#17#0" expanded="true" />
                   </folding>
                 </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="File_generator.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/File_generator.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="153">
+                  <caret line="9" column="4" lean-forward="true" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="berry_picture.jpg" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/berry_picture.jpg">
+              <provider selected="true" editor-type-id="images">
+                <state />
               </provider>
             </entry>
           </file>
@@ -144,20 +153,20 @@
         <option value="$PROJECT_DIR$/blob_detector_bounding_box.py" />
         <option value="$PROJECT_DIR$/test_test.py" />
         <option value="$PROJECT_DIR$/Main Gui.py" />
-        <option value="$PROJECT_DIR$/MainGui.py" />
         <option value="$PROJECT_DIR$/mouse_position.py" />
-        <option value="$PROJECT_DIR$/detect_berries_in_image.py" />
-        <option value="$PROJECT_DIR$/light_seeker.py" />
-        <option value="$PROJECT_DIR$/window_class.py" />
         <option value="$PROJECT_DIR$/test camera.py" />
+        <option value="$PROJECT_DIR$/light_seeker.py" />
+        <option value="$PROJECT_DIR$/MainGui.py" />
+        <option value="$PROJECT_DIR$/window_class.py" />
+        <option value="$PROJECT_DIR$/detect_berries_in_image.py" />
+        <option value="$PROJECT_DIR$/File_generator.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="36" />
-    <option name="y" value="-15" />
-    <option name="width" value="2576" />
-    <option name="height" value="1620" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-7" />
+    <option name="width" value="2569" />
+    <option name="height" value="1567" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -174,6 +183,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -196,7 +206,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -341,15 +350,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="2576" height="1576" extended-state="6" />
+    <frame x="-7" y="0" width="2569" height="1567" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.099609375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.09949079" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21189336" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21320495" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -380,29 +389,30 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/detected_berries.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/detected_berries.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/berry_background.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/window_class.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4182">
           <caret line="458" column="18" lean-forward="false" selection-start-line="458" selection-start-column="18" selection-end-line="458" selection-end-column="18" />
           <folding>
-            <element signature="e#134#144#0" expanded="true" />
-            <element signature="e#6885#7264#0" expanded="false" />
-            <element signature="e#7221#7264#0" expanded="false" />
+            <element signature="e#234#244#0" expanded="true" />
+            <element signature="e#991#4332#0" expanded="false" />
+            <element signature="e#4369#4390#0" expanded="false" />
+            <element signature="e#4420#4753#0" expanded="false" />
+            <element signature="e#4785#4857#0" expanded="false" />
+            <element signature="e#4897#4938#0" expanded="false" />
+            <element signature="e#4974#5184#0" expanded="false" />
+            <element signature="e#5223#5283#0" expanded="false" />
+            <element signature="e#5315#6016#0" expanded="false" />
+            <element signature="e#6068#6339#0" expanded="false" />
+            <element signature="e#6488#7286#0" expanded="false" />
+            <element signature="e#7336#7357#0" expanded="false" />
+            <element signature="e#7401#7780#0" expanded="false" />
+            <element signature="e#7737#7780#0" expanded="false" />
+            <element signature="e#7835#8492#0" expanded="false" />
+            <element signature="e#8602#10134#0" expanded="false" />
+            <element signature="e#10167#13290#0" expanded="false" />
+            <element signature="e#13291#15664#1" expanded="false" />
+            <element signature="e#15683#15756#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -480,9 +490,25 @@
         <state relative-caret-position="2176">
           <caret line="157" column="24" lean-forward="false" selection-start-line="157" selection-start-column="24" selection-end-line="157" selection-end-column="24" />
           <folding>
-            <element signature="e#134#144#0" expanded="true" />
-            <element signature="e#6885#7264#0" expanded="false" />
-            <element signature="e#7221#7264#0" expanded="false" />
+            <element signature="e#234#244#0" expanded="true" />
+            <element signature="e#991#4332#0" expanded="false" />
+            <element signature="e#4369#4390#0" expanded="false" />
+            <element signature="e#4420#4753#0" expanded="false" />
+            <element signature="e#4785#4857#0" expanded="false" />
+            <element signature="e#4897#4938#0" expanded="false" />
+            <element signature="e#4974#5184#0" expanded="false" />
+            <element signature="e#5223#5283#0" expanded="false" />
+            <element signature="e#5315#6016#0" expanded="false" />
+            <element signature="e#6068#6339#0" expanded="false" />
+            <element signature="e#6488#7286#0" expanded="false" />
+            <element signature="e#7336#7357#0" expanded="false" />
+            <element signature="e#7401#7780#0" expanded="false" />
+            <element signature="e#7737#7780#0" expanded="false" />
+            <element signature="e#7835#8492#0" expanded="false" />
+            <element signature="e#8602#10134#0" expanded="false" />
+            <element signature="e#10167#13290#0" expanded="false" />
+            <element signature="e#13291#15664#1" expanded="false" />
+            <element signature="e#15683#15756#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -526,9 +552,25 @@
         <state relative-caret-position="2176">
           <caret line="157" column="24" lean-forward="false" selection-start-line="157" selection-start-column="24" selection-end-line="157" selection-end-column="24" />
           <folding>
-            <element signature="e#134#144#0" expanded="true" />
-            <element signature="e#6885#7264#0" expanded="false" />
-            <element signature="e#7221#7264#0" expanded="false" />
+            <element signature="e#234#244#0" expanded="true" />
+            <element signature="e#991#4332#0" expanded="false" />
+            <element signature="e#4369#4390#0" expanded="false" />
+            <element signature="e#4420#4753#0" expanded="false" />
+            <element signature="e#4785#4857#0" expanded="false" />
+            <element signature="e#4897#4938#0" expanded="false" />
+            <element signature="e#4974#5184#0" expanded="false" />
+            <element signature="e#5223#5283#0" expanded="false" />
+            <element signature="e#5315#6016#0" expanded="false" />
+            <element signature="e#6068#6339#0" expanded="false" />
+            <element signature="e#6488#7286#0" expanded="false" />
+            <element signature="e#7336#7357#0" expanded="false" />
+            <element signature="e#7401#7780#0" expanded="false" />
+            <element signature="e#7737#7780#0" expanded="false" />
+            <element signature="e#7835#8492#0" expanded="false" />
+            <element signature="e#8602#10134#0" expanded="false" />
+            <element signature="e#10167#13290#0" expanded="false" />
+            <element signature="e#13291#15664#1" expanded="false" />
+            <element signature="e#15683#15756#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -581,9 +623,25 @@
         <state relative-caret-position="2380">
           <caret line="205" column="41" lean-forward="true" selection-start-line="205" selection-start-column="41" selection-end-line="205" selection-end-column="41" />
           <folding>
-            <element signature="e#134#144#0" expanded="true" />
-            <element signature="e#6885#7264#0" expanded="false" />
-            <element signature="e#7221#7264#0" expanded="false" />
+            <element signature="e#234#244#0" expanded="true" />
+            <element signature="e#991#4332#0" expanded="false" />
+            <element signature="e#4369#4390#0" expanded="false" />
+            <element signature="e#4420#4753#0" expanded="false" />
+            <element signature="e#4785#4857#0" expanded="false" />
+            <element signature="e#4897#4938#0" expanded="false" />
+            <element signature="e#4974#5184#0" expanded="false" />
+            <element signature="e#5223#5283#0" expanded="false" />
+            <element signature="e#5315#6016#0" expanded="false" />
+            <element signature="e#6068#6339#0" expanded="false" />
+            <element signature="e#6488#7286#0" expanded="false" />
+            <element signature="e#7336#7357#0" expanded="false" />
+            <element signature="e#7401#7780#0" expanded="false" />
+            <element signature="e#7737#7780#0" expanded="false" />
+            <element signature="e#7835#8492#0" expanded="false" />
+            <element signature="e#8602#10134#0" expanded="false" />
+            <element signature="e#10167#13290#0" expanded="false" />
+            <element signature="e#13291#15664#1" expanded="false" />
+            <element signature="e#15683#15756#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -655,11 +713,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CRAZY.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/detected_berries.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -669,23 +722,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
+        <state relative-caret-position="153">
           <caret line="14" column="3" lean-forward="false" selection-start-line="14" selection-start-column="3" selection-end-line="15" selection-end-column="14" />
           <folding>
             <element signature="e#10#34#0" expanded="true" />
           </folding>
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cleaned_berry_boxes.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/detected_berries.jpg">
@@ -694,11 +741,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/berry_with_light.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/berry_picture.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
@@ -712,7 +754,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="10" lean-forward="false" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -720,49 +761,97 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/window_class.py">
+    <entry file="file://$PROJECT_DIR$/cleaned_berry_boxes.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CRAZY.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/light_seeker.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2176">
-          <caret line="291" column="20" lean-forward="false" selection-start-line="291" selection-start-column="20" selection-end-line="291" selection-end-column="20" />
+        <state relative-caret-position="340">
+          <caret line="20" column="32" lean-forward="true" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
           <folding>
-            <element signature="e#134#144#0" expanded="true" />
-            <element signature="e#6885#7264#0" expanded="false" />
-            <element signature="e#7221#7264#0" expanded="false" />
+            <element signature="e#0#17#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/berry_screen_saver.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/MainGui.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="48" selection-end-column="10" />
+        <state relative-caret-position="867">
+          <caret line="51" column="0" lean-forward="true" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/light_seeker.py">
+    <entry file="file://$PROJECT_DIR$/background.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/window_class.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="17" selection-end-column="32" />
+        <state relative-caret-position="1068">
+          <caret line="500" column="0" lean-forward="true" selection-start-line="500" selection-start-column="0" selection-end-line="500" selection-end-column="0" />
           <folding>
-            <element signature="e#0#17#0" expanded="true" />
+            <element signature="e#234#244#0" expanded="true" />
+            <element signature="e#991#4332#0" expanded="false" />
+            <element signature="e#4369#4390#0" expanded="false" />
+            <element signature="e#4420#4753#0" expanded="false" />
+            <element signature="e#4785#4857#0" expanded="false" />
+            <element signature="e#4897#4938#0" expanded="false" />
+            <element signature="e#4974#5184#0" expanded="false" />
+            <element signature="e#5223#5283#0" expanded="false" />
+            <element signature="e#5315#6016#0" expanded="false" />
+            <element signature="e#6068#6339#0" expanded="false" />
+            <element signature="e#6488#7286#0" expanded="false" />
+            <element signature="e#7336#7357#0" expanded="false" />
+            <element signature="e#7401#7780#0" expanded="false" />
+            <element signature="e#7737#7780#0" expanded="false" />
+            <element signature="e#7835#8492#0" expanded="false" />
+            <element signature="e#8602#10134#0" expanded="false" />
+            <element signature="e#10167#13290#0" expanded="false" />
+            <element signature="e#13291#15664#1" expanded="false" />
+            <element signature="e#15683#15756#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/detect_berries_in_image.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1513">
-          <caret line="89" column="22" lean-forward="false" selection-start-line="81" selection-start-column="4" selection-end-line="89" selection-end-column="22" />
+        <state relative-caret-position="-655">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding>
             <element signature="e#0#17#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/berry_picture.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/File_generator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="4" lean-forward="true" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+          <folding />
         </state>
       </provider>
     </entry>

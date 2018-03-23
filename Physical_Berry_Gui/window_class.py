@@ -1,8 +1,11 @@
 
 ## Gui Element for the link between worlds project:
-    # Written by casey walker
-    # all elements in the gui are contained here.
+"""
+     Written by casey walker
+     all elements in the gui are contained here.
+     functions for the berry stuff are handled on the berry network side but are called here.
 
+"""
 import sys
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
@@ -21,6 +24,7 @@ from light_seeker import light_seeker
 import random
 
 
+
 class Window(QMainWindow):
 
     OFFSET_FOR_THE_IMAGE = 55
@@ -31,6 +35,7 @@ class Window(QMainWindow):
         self.berry_image = None
         self.berry_image_difference = None
         self.init_ui()
+        self.background = "background.jpg"
 
 
     def init_ui(self):
@@ -174,9 +179,11 @@ class Window(QMainWindow):
 
         cam = cv2.VideoCapture(0)  # 0 -> index of camera
         s, img = cam.read()
+
         if s:  # frame captured without any errors
             #namedWindow("Berry Snapper")
-            img = cv2.imshow("Berry Snapper", img)
+            img = cv2.resize(img, None, fx=2, fy=1.5)
+            cv2.imshow("Berry Snapper", img)
             #img = cv2.resize(img, None, 2,2, interpolation=cv2.INTER_AREA)
             cv2.waitKey(0)
             cv2.destroyWindow("Berry Snapper")
@@ -185,12 +192,21 @@ class Window(QMainWindow):
             self.berry_detection_bounding_box = berry_detection()
 
             cv2.waitKey()
+    def generate_files_to_be_edited(self):
+        # files for all the berry types in the project are to be generated here.
+        global berry_detection_bounding_box
+        if berry_detection_bounding_box > 0:
+            # check to see if there are any bounding boxes.
+            berry_detection()
+        return None
+
+
 
     # This function pulls in the initial berry picture and iw will set it as the background of the Gui.
     def reset_background(self):
 
         label = QLabel(self)
-        pixmap = QPixmap('berry_picture.jpg')
+        pixmap = QPixmap('background.jpg')
         label.setPixmap(pixmap)
 
         label.resize(pixmap.width(), pixmap.height())
@@ -204,7 +220,7 @@ class Window(QMainWindow):
         self.layout.addWidget(label)
 
         label = QLabel(self)
-        pixmap = QPixmap('cleaned_berry_boxes.png')
+        #pixmap = QPixmap('cleaned_berry_boxes.png')
         label.setPixmap(pixmap)
 
         label.resize(pixmap.width(), pixmap.height())
@@ -269,31 +285,19 @@ class Window(QMainWindow):
 
         for berry in berries:
             print('name: {}, type: {}, guid: {}'.format(berry.name, berry.berry_type, berry.addr))
-            if berry.berry_type == 'Button':
-                btn = berry
-            if berry.berry_type == 'RGB':
-                led = berry
-                led.color = [0,0,0]
-            if berry.berry_type == 'Slider':
-                slider = berry
-            if berry.berry_type == 'Knob':
-                knob = berry
-            if berry.berry_type == 'Beeper':
-                beeper = berry
 
+        #print("did you get here??") Worked
         for berry in berries:
-            led.color = [0,0,0]
-            print(berry)
+            #led.color = [0,0,0]
+            print(berry.berry_type)
             print("next berry : \n")
             berry.set_status_led(1)
-            image_difference = light_seeker()
-
-            image_difference
+            #image_difference = light_seeker()
+            #image_difference
             sleep(2)
-
             berry.set_status_led(0)
             #berry_detection()
-
+            # this is all working, th light seekere image processing is the main crux in the loop.
         #
         # # loops forever, make it walk through the sequence once getting all of the berries.
         # try:

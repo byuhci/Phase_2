@@ -22,7 +22,7 @@ def main():
     # berry list. Has all of the values like Guid and type.
     #berry_list = get_berry_list()
 
-    berry_detection()
+    #berry_detection()
 
     window_class.main()
 

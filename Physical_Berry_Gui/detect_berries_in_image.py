@@ -8,6 +8,7 @@ import numpy as np
 def berry_detection():
     contour_list = []
 
+    # the image that is used here should be the picture taken from the webcam
     berry_image = cv2.imread("berry_picture.jpg")
 
     berry_image_copied = berry_image
