@@ -11,7 +11,7 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 import text_editor_class
-from cv2 import *
+import cv2
 from python_src import *
 from python_src.berry_api import *
 from python_src.berry_factory import berry_factory
@@ -20,7 +20,7 @@ from time import sleep
 import MainGui
 from detect_berries_in_image import berry_detection
 import numpy as np
-from light_seeker import light_seeker
+# from light_seeker import light_seeker
 import random
 
 
@@ -174,7 +174,7 @@ class Window(QMainWindow):
     def camera(self):
         # initialize the camera
 
-        self.berry_detection_bounding_box = berry_detection()
+        # self.berry_detection_bounding_box = berry_detection()
 
 
         cam = cv2.VideoCapture(0)  # 0 -> index of camera
@@ -192,6 +192,7 @@ class Window(QMainWindow):
             self.berry_detection_bounding_box = berry_detection()
 
             cv2.waitKey()
+
     def generate_files_to_be_edited(self):
         # files for all the berry types in the project are to be generated here.
         global berry_detection_bounding_box
