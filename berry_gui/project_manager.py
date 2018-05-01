@@ -1,15 +1,10 @@
 
 
-def open_project(project_name):
-    pass
 
+class ProjectManager:
 
-def new_project(project_name):
-    pass
+    def __init__(self, project_name):
+        pass
 
-
-def sync_project():
-    pass
-
-
-def 
+    def sync_project(self):
+        pass

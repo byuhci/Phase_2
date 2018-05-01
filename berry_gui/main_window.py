@@ -2,6 +2,7 @@ import sys
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
+from subwindow import *
 
 
 class MainWindow(QMainWindow):
@@ -10,10 +11,11 @@ class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         self.berry_detection_bounding_box = None
-        self.berry_image = None
+        self.berry_image = 'berry_picture.jpg'
         self.berry_image_difference = None
-        self.init_ui()
+        self.mdiArea = QMdiArea()
         self.background = "background.jpg"
+        self.init_ui()
 
     def init_ui(self):
         icons_path = "icons/"
@@ -34,17 +36,12 @@ class MainWindow(QMainWindow):
         openEditor = QAction("Editor", self)
         openEditor.setShortcut("Ctrl+E")
         openEditor.setStatusTip("Open Editor")
-        openEditor.triggered.connect(self.editor)
+        openEditor.triggered.connect(self.open_editor)
 
         openFile = QAction("Open File", self)
         openFile.setShortcut("Ctrl+o")
         openFile.setStatusTip("Open File")
-        openFile.triggered.connect(self.file_Open)
-
-        self.pushButton = QPushButton("New Window", self)
-        self.pushButton.move(120, 120)
-        self.pushButton.clicked.connect(self.help_window)
-        self.newWindow = help(self)
+        # openFile.triggered.connect(self.file_Open)
 
         mainMenu = self.menuBar()
         fileMenu = mainMenu.addMenu("&File")
@@ -56,49 +53,50 @@ class MainWindow(QMainWindow):
         # fileMenu.addAction(help)
 
         self.setWindowIcon(QIcon(icons_path + "berry_icon.png"))
-        # self.home_window()
-
-        # Toolbars initialized here
-        # toolbar menu icon set here
-        # Triggering actions are assigned here
-
 
         extract_action_toolbar_berry = QAction(QIcon(icons_path + "flatberry.png"), "Connect to the berries", self)
-        extract_action_toolbar_berry.triggered.connect(self.close)
+        # extract_action_toolbar_berry.triggered.connect(self.close)
 
         self.toolBar = self.addToolBar("BeRRY")
         self.toolBar.addAction(extract_action_toolbar_berry)
 
         extract_action_toolbar_berry = QAction(QIcon(icons_path + "camera.png"), "Take Picture Using Webcam", self)
-        extract_action_toolbar_berry.triggered.connect(self.camera)
+        extract_action_toolbar_berry.triggered.connect(self.show_picture)
 
         self.toolBar = self.addToolBar("Camera toolbar")
         self.toolBar.addAction(extract_action_toolbar_berry)
 
         extract_action_toolbar_berry = QAction(QIcon(icons_path + "lights.png"), "Flashes the lights", self)
-        extract_action_toolbar_berry.triggered.connect(self.light_sequence)
+        # extract_action_toolbar_berry.triggered.connect(self.light_sequence)
 
         self.toolBar = self.addToolBar("Lights toolbar")
         self.toolBar.addAction(extract_action_toolbar_berry)
 
         extract_action_toolbar_berry = QAction(QIcon(""), "Opens the Editor", self)
-        extract_action_toolbar_berry.triggered.connect(self.editor_window)
+        extract_action_toolbar_berry.triggered.connect(self.open_editor)
 
         self.toolBar = self.addToolBar("Editor")
         self.toolBar.addAction(extract_action_toolbar_berry)
 
         extract_action_toolbar_berry = QAction(QIcon(""), "Set the image", self)
-        extract_action_toolbar_berry.triggered.connect(self.reset_background)
+        # extract_action_toolbar_berry.triggered.connect(self.reset_background)
 
         self.toolBar = self.addToolBar("Reset Background")
         self.toolBar.addAction(extract_action_toolbar_berry)
 
-        self.layout = QGridLayout()
+        # self.layout = QGridLayout()
+        # self.reset_background()
 
-        self.reset_background()
+        self.mdiArea.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
+        self.mdiArea.setVerticalScrollBarPolicy(Qt.ScrollBarAsNeeded)
+        bg = QPixmap(self.background)
+        bg.scaled(self.size(), Qt.KeepAspectRatioByExpanding)
+        self.mdiArea.setBackground(QBrush(bg))
+        self.mdiArea.setOption(QMdiArea.DontMaximizeSubWindowOnActivation)
+        self.setCentralWidget(self.mdiArea)
 
-        self.setMouseTracking(True)
-        self.mousePressEvent(self)
+        # self.setMouseTracking(True)
+        # self.mousePressEvent(self)
         # self.mouse_position_tracker(self)
 
         self.show()
@@ -117,30 +115,64 @@ class MainWindow(QMainWindow):
             pass
 
     def open_editor(self):
-        self.textEdit = QTextEdit()
-        self.setCentralWidget(self.textEdit)
+        child = TextWindow()
+        sw = self.mdiArea.addSubWindow(child)
+        sw.setWindowFlags(Qt.WindowCloseButtonHint | Qt.WindowStaysOnTopHint)
+        child.show()
 
-    def editor_window(self):
-        text_editor_class.main()
-        print("Showing the Editor")
+    def show_picture(self):
+        child = PictureWindow()
+        sw = self.mdiArea.addSubWindow(child)
+        # sw.setWindowFlags()
+        sw.showMaximized()
+        child.show()
+        child.set_picture(self.berry_image)
 
-    def camera(self):
-        # initialize the camera
+    def quit(self):
+        print("Quiting out, Thanks...")
+        choice = QMessageBox.question(self, "Close Application", "Are you sure you want to quit?",
+                                      QMessageBox.Yes | QMessageBox.No)
+        if choice == QMessageBox.Yes:
+            print("Quiting Berry GUI")
+            sys.exit()
+        else:
+            pass
 
-        # self.berry_detection_bounding_box = berry_detection()
+            # This function pulls in the initial berry picture and iw will set it as the background of the Gui.
 
-        cam = cv2.VideoCapture(0)  # 0 -> index of camera
-        s, img = cam.read()
+    def reset_background(self):
 
-        if s:  # frame captured without any errors
-            # namedWindow("Berry Snapper")
-            img = cv2.resize(img, None, fx=2, fy=1.5)
-            cv2.imshow("Berry Snapper", img)
-            # img = cv2.resize(img, None, 2,2, interpolation=cv2.INTER_AREA)
-            cv2.waitKey(0)
-            cv2.destroyWindow("Berry Snapper")
-            cv2.imwrite("CRAZY.jpg", img)  # save image
-            self.berry_image = img
-            self.berry_detection_bounding_box = berry_detection()
+        label = QLabel(self)
+        pixmap = QPixmap('background.jpg')
+        label.setPixmap(pixmap)
 
-            cv2.waitKey()
+        label.resize(pixmap.width(), pixmap.height())
+        label.move(0, self.OFFSET_FOR_THE_IMAGE)
+
+        self.layout.addWidget(label)
+
+        label.resize(pixmap.width(), pixmap.height())
+        label.move(0, self.OFFSET_FOR_THE_IMAGE)
+
+        self.layout.addWidget(label)
+
+        label = QLabel(self)
+        # pixmap = QPixmap('cleaned_berry_boxes.png')
+        label.setPixmap(pixmap)
+
+        label.resize(pixmap.width(), pixmap.height())
+        label.move(0, self.OFFSET_FOR_THE_IMAGE)
+
+        self.layout.addWidget(label)
+
+        self.show()
+
+
+def main():
+    app = QApplication(sys.argv)
+    gui = MainWindow()
+    sys.exit(app.exec_())
+
+
+if __name__ == '__main__':
+    main()

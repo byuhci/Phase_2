@@ -37,9 +37,7 @@ class Window(QMainWindow):
         self.init_ui()
         self.background = "background.jpg"
 
-
     def init_ui(self):
-
         icons_path = "icons/"
 
         self.setWindowTitle("Berry GUI")
@@ -55,7 +53,6 @@ class Window(QMainWindow):
         extract_action_edit.setStatusTip("Looking for files")
         extract_action_edit.triggered.connect(self.quit)
 
-
         openEditor = QAction("Editor", self)
         openEditor.setShortcut("Ctrl+E")
         openEditor.setStatusTip("Open Editor")
@@ -65,7 +62,6 @@ class Window(QMainWindow):
         openFile.setShortcut("Ctrl+o")
         openFile.setStatusTip("Open File")
         openFile.triggered.connect(self.file_Open)
-
 
         self.pushButton = QPushButton("New Window", self)
         self.pushButton.move(120, 120)
@@ -81,16 +77,12 @@ class Window(QMainWindow):
         #fileMenu = mainMenu.addMenu("&Help")
         #fileMenu.addAction(help)
 
-
-
-
         self.setWindowIcon(QIcon(icons_path+"berry_icon.png"))
         #self.home_window()
 
         # Toolbars initialized here
         # toolbar menu icon set here
         # Triggering actions are assigned here
-
 
         extract_action_toolbar_berry = QAction(QIcon(icons_path+"flatberry.png"), "Connect to the berries", self)
         extract_action_toolbar_berry.triggered.connect(self.close)
@@ -126,12 +118,9 @@ class Window(QMainWindow):
 
         self.reset_background()
 
-        #self.show()
-
         self.setMouseTracking(True)
         self.mousePressEvent(self)
         #self.mouse_position_tracker(self)
-
 
         self.show()
 
