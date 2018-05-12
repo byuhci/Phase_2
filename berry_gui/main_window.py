@@ -3,6 +3,7 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 from subwindow import *
+from project_manager import ProjectManager
 
 
 class MainWindow(QMainWindow):
@@ -15,6 +16,8 @@ class MainWindow(QMainWindow):
         self.berry_image_difference = None
         self.mdiArea = QMdiArea()
         self.background = "background.jpg"
+        self.threadpool = QThreadPool()
+        print("Multithreading with maximum %d threads" % self.threadpool.maxThreadCount())
         self.init_ui()
 
     def init_ui(self):
@@ -55,7 +58,7 @@ class MainWindow(QMainWindow):
         self.setWindowIcon(QIcon(icons_path + "berry_icon.png"))
 
         extract_action_toolbar_berry = QAction(QIcon(icons_path + "flatberry.png"), "Connect to the berries", self)
-        # extract_action_toolbar_berry.triggered.connect(self.close)
+        extract_action_toolbar_berry.triggered.connect(self.open_project)
 
         self.toolBar = self.addToolBar("BeRRY")
         self.toolBar.addAction(extract_action_toolbar_berry)
@@ -121,12 +124,12 @@ class MainWindow(QMainWindow):
         child.show()
 
     def show_picture(self):
-        child = PictureWindow()
+        child = PictureWindow(self.berry_image)
         sw = self.mdiArea.addSubWindow(child)
         # sw.setWindowFlags()
         sw.showMaximized()
         child.show()
-        child.set_picture(self.berry_image)
+        self.threadpool.start(Worker(self.manager.find_berries))
 
     def quit(self):
         print("Quiting out, Thanks...")
@@ -167,6 +170,24 @@ class MainWindow(QMainWindow):
 
         self.show()
 
+    def open_project(self):
+        dialog = QFileDialog()
+        filepath = dialog.getExistingDirectory(self, 'Choose existing project or create a new folder', './')
+        self.manager = ProjectManager(filepath)
+        self.manager.sync_project()
+
+
+class Worker(QRunnable):
+    def __init__(self, fn, *args, **kwargs):
+        super(Worker, self).__init__()
+        self.fn = fn
+        self.args = args
+        self.kwargs = kwargs
+
+    @pyqtSlot()
+    def run(self):
+        self.fn(*self.args, **self.kwargs)
+
 
 def main():
     app = QApplication(sys.argv)
@@ -174,5 +195,10 @@ def main():
     sys.exit(app.exec_())
 
 
-if __name__ == '__main__':
+def except_hook(cls, exception, traceback):
+    sys.__excepthook__(cls, exception, traceback)
+
+if __name__ == "__main__":
+    import sys
+    sys.excepthook = except_hook
     main()
