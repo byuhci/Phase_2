@@ -13,10 +13,18 @@ class BerryError(Exception):
 
 ### HOST API ###################################################################
 
+init = False
+
+
 # init_host:
 # parameters:
 #   argv - command line arguments;
 def init_host(argv):
+    global init
+    if init:
+        return
+    else:
+        init = True
     # Cast argv to a char** to pass into init_all
     arr = (ctypes.c_char_p * len(argv))
     args = arr()

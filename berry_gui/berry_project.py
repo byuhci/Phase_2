@@ -90,6 +90,13 @@ class BerryProject:
             berry = berry_factory(name, guid, berry_type)
             self.project_berries[name] = berry
 
+    def fetch_code(self, name):
+        return join(self.fullpath, ''.join((name, '.py')))
+
+    def run_project(self):
+        self.project_init.reload()
+        self.project_init.__main__.main(sys.argv)
+
     def _update_project_files_(self):
         with open(self.src_files[self.INIT_FILE_NAME], 'r') as file:
             init_text = file.read()

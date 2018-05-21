@@ -1,6 +1,6 @@
 
 def on_pressed():
-    pass
+    light1.color = [10,10,200]
 
 def on_released():
-    pass
+    light1.color = [0,0,0]

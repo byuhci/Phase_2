@@ -8,6 +8,8 @@ from project_manager import ProjectManager
 
 class MainWindow(QMainWindow):
     OFFSET_FOR_THE_IMAGE = 55
+    signal = pyqtSignal()
+    clickSignal = pyqtSignal(str)
 
     def __init__(self):
         super().__init__()
@@ -17,6 +19,10 @@ class MainWindow(QMainWindow):
         self.mdiArea = QMdiArea()
         self.background = "background.jpg"
         self.threadpool = QThreadPool()
+        self.signal.connect(self.finished_find)
+        self.clickSignal.connect(self.clicked_berry)
+        self.picture_window = None
+        self.text_window = None
         print("Multithreading with maximum %d threads" % self.threadpool.maxThreadCount())
         self.init_ui()
 
@@ -87,6 +93,16 @@ class MainWindow(QMainWindow):
         self.toolBar = self.addToolBar("Reset Background")
         self.toolBar.addAction(extract_action_toolbar_berry)
 
+        save_action = QAction(QIcon(icons_path + 'save.png'), 'Saves the currently open code window', self)
+        save_action.triggered.connect(self.save_file)
+        self.toolBar = self.addToolBar('Save code')
+        self.toolBar.addAction(save_action)
+
+        run_action = QAction(QIcon(icons_path + 'play.png'), 'Runs the project', self)
+        run_action.triggered.connect(self.run_project)
+        self.toolBar = self.addToolBar('Run project')
+        self.toolBar.addAction(run_action)
+
         # self.layout = QGridLayout()
         # self.reset_background()
 
@@ -97,6 +113,10 @@ class MainWindow(QMainWindow):
         self.mdiArea.setBackground(QBrush(bg))
         self.mdiArea.setOption(QMdiArea.DontMaximizeSubWindowOnActivation)
         self.setCentralWidget(self.mdiArea)
+
+        self.picture_window = PictureWindow(self.background, self.clickSignal)
+        self.mdiArea.addSubWindow(self.picture_window)
+        self.picture_window.showMaximized()
 
         # self.setMouseTracking(True)
         # self.mousePressEvent(self)
@@ -124,12 +144,34 @@ class MainWindow(QMainWindow):
         child.show()
 
     def show_picture(self):
-        child = PictureWindow(self.berry_image)
-        sw = self.mdiArea.addSubWindow(child)
+        self.threadpool.start(Worker(self.manager.find_berries, self.signal))
+
+    @pyqtSlot(str)
+    def clicked_berry(self, name):
+        if self.text_window is None:
+            self.text_window = TextWindow()
+            self.text_sub = self.mdiArea.addSubWindow(self.text_window)
+            self.text_sub.setWindowFlags(Qt.WindowCloseButtonHint | Qt.WindowStaysOnTopHint)
+        filename = self.manager.pick_berry(name)
+        self.text_window.load_file(filename)
+        self.text_sub.setWindowTitle(name)
+        self.text_window.show()
+
+    def save_file(self):
+        self.text_window.save_file()
+
+    def run_project(self):
+        self.save_file()
+        self.threadpool.start(Worker(self.manager.project.run_project))
+
+    @pyqtSlot()
+    def finished_find(self):
+        print('Finished finding berries')
         # sw.setWindowFlags()
-        sw.showMaximized()
-        child.show()
-        self.threadpool.start(Worker(self.manager.find_berries))
+        self.picture_window.set_picture(self.manager.current_image())
+        self.picture_window.fit_window()
+        self.picture_window.show_berries(self.manager.berry_map)
+        self.picture_window.show()
 
     def quit(self):
         print("Quiting out, Thanks...")
@@ -167,7 +209,6 @@ class MainWindow(QMainWindow):
         label.move(0, self.OFFSET_FOR_THE_IMAGE)
 
         self.layout.addWidget(label)
-
         self.show()
 
     def open_project(self):
