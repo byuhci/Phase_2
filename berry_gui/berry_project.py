@@ -100,7 +100,7 @@ class BerryProject:
     def _update_project_files_(self):
         with open(self.src_files[self.INIT_FILE_NAME], 'r') as file:
             init_text = file.read()
-        init_text = init_text.format(str(self.project_files))
+        init_text = init_text.format(files=str(self.project_files))
         with open(join(self.fullpath, self.INIT_FILE_NAME), 'w') as file:
             file.write(init_text)
 

@@ -2,23 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2bfc8438-91da-46a1-9be9-5f6d195c229a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/berry_gui/diff_image_3.png" afterPath="$PROJECT_DIR$/berry_gui/diff_image_3.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/berry_gui/diff_image_5.png" afterPath="$PROJECT_DIR$/berry_gui/diff_image_5.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/berry_gui/diff_image_key_3.png" afterPath="$PROJECT_DIR$/berry_gui/diff_image_key_3.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/berry_gui/diff_image_key_5.png" afterPath="$PROJECT_DIR$/berry_gui/diff_image_key_5.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/berry_gui/image_1.png" afterPath="$PROJECT_DIR$/berry_gui/image_1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/berry_gui/image_2.png" afterPath="$PROJECT_DIR$/berry_gui/image_2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/berry_gui/image_4.png" afterPath="$PROJECT_DIR$/berry_gui/image_4.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/berry_gui/berry_project.py" afterPath="$PROJECT_DIR$/berry_gui/berry_project.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/berry_gui/camera.py" afterPath="$PROJECT_DIR$/berry_gui/camera.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/berry_gui/main_window.py" afterPath="$PROJECT_DIR$/berry_gui/main_window.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/berry_gui/project_manager.py" afterPath="$PROJECT_DIR$/berry_gui/project_manager.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/berry_gui/subwindow.py" afterPath="$PROJECT_DIR$/berry_gui/subwindow.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/test/__init__.py" afterPath="$PROJECT_DIR$/projects/test/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/test/__main__.py" afterPath="$PROJECT_DIR$/projects/test/__main__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/test/button1.py" afterPath="$PROJECT_DIR$/projects/test/button1.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/python_src/berry_api.py" afterPath="$PROJECT_DIR$/python_src/berry_api.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen_src/__init__.py" afterPath="$PROJECT_DIR$/gen_src/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/test2/__init__.py" afterPath="$PROJECT_DIR$/projects/test2/__init__.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -32,7 +19,7 @@
     <SUITE FILE_PATH="coverage/Phase_2$window_class.coverage" NAME="window_class Coverage Results" MODIFIED="1525204120587" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Physical_Berry_Gui" />
     <SUITE FILE_PATH="coverage/Phase_2$BerryGen.coverage" NAME="BerryGen Coverage Results" MODIFIED="1522349180373" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Phase_2$Unnamed.coverage" NAME="Main Coverage Results" MODIFIED="1519936571874" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/projects/nettest" />
-    <SUITE FILE_PATH="coverage/Phase_2$BerryWindow.coverage" NAME="BerryWindow Coverage Results" MODIFIED="1526935480010" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/berry_gui" />
+    <SUITE FILE_PATH="coverage/Phase_2$BerryWindow.coverage" NAME="BerryWindow Coverage Results" MODIFIED="1526936282857" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/berry_gui" />
     <SUITE FILE_PATH="coverage/Phase_2$Main.coverage" NAME="Main Coverage Results" MODIFIED="1522955857220" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/projects/nettest" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
@@ -63,7 +50,7 @@
             <entry file="file://$PROJECT_DIR$/berry_gui/main_window.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="337">
-                  <caret line="197" column="0" lean-forward="true" selection-start-line="197" selection-start-column="0" selection-end-line="197" selection-end-column="0" />
+                  <caret line="197" column="0" lean-forward="false" selection-start-line="197" selection-start-column="0" selection-end-line="197" selection-end-column="0" />
                   <folding>
                     <element signature="e#0#10#0" expanded="true" />
                   </folding>
@@ -74,8 +61,8 @@
           <file leaf-file-name="__init__.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/projects/test/__init__.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="480">
-                  <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+                <state relative-caret-position="312">
+                  <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
                   <folding>
                     <element signature="e#28#44#0" expanded="true" />
                   </folding>
@@ -127,7 +114,7 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="project_manager.py" pinned="false" current-in-tab="true">
+          <file leaf-file-name="project_manager.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/berry_gui/project_manager.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="136">
@@ -139,24 +126,14 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="berry_project.py" pinned="false" current-in-tab="false">
+          <file leaf-file-name="berry_project.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/berry_gui/berry_project.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="287">
-                  <caret line="93" column="49" lean-forward="false" selection-start-line="93" selection-start-column="49" selection-end-line="93" selection-end-column="49" />
+                <state relative-caret-position="387">
+                  <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
                   <folding>
                     <element signature="e#0#9#0" expanded="true" />
                   </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
-            <entry file="file://C:/ProgramData/Anaconda3/Lib/importlib/__init__.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="396">
-                  <caret line="116" column="0" lean-forward="false" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
-                  <folding />
                 </state>
               </provider>
             </entry>
@@ -214,10 +191,10 @@
         <option value="$PROJECT_DIR$/python_src/berry_api.py" />
         <option value="$PROJECT_DIR$/berry_gui/main_window.py" />
         <option value="$PROJECT_DIR$/berry_gui/camera.py" />
-        <option value="$PROJECT_DIR$/berry_gui/berry_project.py" />
         <option value="$PROJECT_DIR$/projects/test/main.py" />
         <option value="$PROJECT_DIR$/projects/test/__main__.py" />
         <option value="$PROJECT_DIR$/projects/test/__init__.py" />
+        <option value="$PROJECT_DIR$/berry_gui/berry_project.py" />
       </list>
     </option>
   </component>
@@ -695,6 +672,11 @@
           <line>8</line>
           <option name="timeStamp" value="47" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/berry_gui/berry_project.py</url>
+          <line>83</line>
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
@@ -706,7 +688,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="48" />
+      <option name="time" value="49" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
@@ -716,13 +698,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Physical_Berry_Gui/Click_area_class.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Physical_Berry_Gui/help_class.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="674">
@@ -981,14 +956,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/ProgramData/Anaconda3/Lib/importlib/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="116" column="0" lean-forward="false" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.PyCharm2017.1/system/python_stubs/-313451744/builtins.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
@@ -1032,16 +999,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/berry_gui/berry_project.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="93" column="49" lean-forward="false" selection-start-line="93" selection-start-column="49" selection-end-line="93" selection-end-column="49" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/berry_gui/project_manager.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -1055,7 +1012,7 @@
     <entry file="file://$PROJECT_DIR$/berry_gui/main_window.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="337">
-          <caret line="197" column="0" lean-forward="true" selection-start-line="197" selection-start-column="0" selection-end-line="197" selection-end-column="0" />
+          <caret line="197" column="0" lean-forward="false" selection-start-line="197" selection-start-column="0" selection-end-line="197" selection-end-column="0" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
@@ -1082,10 +1039,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/projects/test/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        <state relative-caret-position="312">
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding>
             <element signature="e#28#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/ProgramData/Anaconda3/Lib/importlib/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="116" column="0" lean-forward="false" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projects/test2/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#28#44#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/berry_gui/berry_project.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="387">
+          <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
