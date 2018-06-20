@@ -1,7 +1,9 @@
 
 ## Gui Element for the link between worlds project:
 """
+     *****************************
      Written by casey walker
+     *****************************
      all elements in the gui are contained here.
      functions for the berry stuff are handled on the berry network side but are called here.
 
@@ -84,19 +86,19 @@ class Window(QMainWindow):
         # toolbar menu icon set here
         # Triggering actions are assigned here
 
-        extract_action_toolbar_berry = QAction(QIcon(icons_path+"flatberry.png"), "Connect to the berries", self)
+        extract_action_toolbar_berry = QAction(QIcon(icons_path+"flatberry.png"), "Connect to the berriez", self)
         extract_action_toolbar_berry.triggered.connect(self.close)
 
         self.toolBar = self.addToolBar("BeRRY")
         self.toolBar.addAction(extract_action_toolbar_berry)
 
-        extract_action_toolbar_berry = QAction(QIcon(icons_path+"camera.png"), "Take Picture Using Webcam", self)
+        extract_action_toolbar_berry = QAction(QIcon(icons_path+"camera.png"), "Take Picture Using Webcamz", self)
         extract_action_toolbar_berry.triggered.connect(self.camera)
 
         self.toolBar = self.addToolBar("Camera toolbar")
         self.toolBar.addAction(extract_action_toolbar_berry)
 
-        extract_action_toolbar_berry = QAction(QIcon(icons_path+"lights.png"), "Flashes the lights", self)
+        extract_action_toolbar_berry = QAction(QIcon(icons_path+"lights.png"), "Flashes the lightz", self)
         extract_action_toolbar_berry.triggered.connect(self.light_sequence)
 
         self.toolBar = self.addToolBar("Lights toolbar")

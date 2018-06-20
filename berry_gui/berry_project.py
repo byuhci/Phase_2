@@ -3,12 +3,14 @@ import sys
 from python_src import *
 from python_src import berry_api as api
 from python_src.berry_factory import berry_factory
+from python_src.berry_factory import berry_class_decider
 import glob
 import importlib
 import importlib.util
 import shutil
 import re
 from os.path import join
+
 
 
 class BerryProject:
@@ -38,6 +40,7 @@ class BerryProject:
         'Servo': 'servo{}',
         'Flex': 'flex{}'
     }
+
 
     '''
     project_name is also the folder inside the path where all the files are located

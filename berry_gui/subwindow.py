@@ -2,17 +2,65 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 import typing
+from enum import Enum
 
 
 class TextWindow(QTextEdit):
+    underlying_object_exists = False
+
+    class InputMode(Enum):
+        lookingForInputDevice = 0
+        lookingForOutputDevice= 1
+        neutral= 2
+
+    mode = InputMode.neutral
+
     def __init__(self):
         super().__init__()
+        self.underlying_object_exists = True
         self.setAttribute(Qt.WA_DeleteOnClose)
         doc = self.document()
         font = doc.defaultFont()
         font.setFamily('Courier New')
         doc.setDefaultFont(font)
         self.filename = None
+
+    def contextMenuEvent(self, e: QContextMenuEvent):
+        print ('context menu event! at '+  e.globalPos().__str__())
+        context_menu = self.createStandardContextMenu()
+        pickOutputDevice = QAction(QIcon(""), "pick an output", self)
+        pickOutputDevice.triggered.connect(self.pickOutputBerry)
+        context_menu.addAction(pickOutputDevice)
+        context_menu.exec(e.globalPos())
+
+    def pickOutputBerry (self):
+        self.mode = self.InputMode.lookingForOutputDevice
+        print ('mode is now ' + self.mode.name)
+
+    def anOutputWasSelected(self,berryName):
+        print ('reset mode to neutral, added selected berry at cursor point')
+        self.mode = self.InputMode.neutral
+        self.insertPlainText(berryName + '.')
+        self.activateWindow()
+
+    def getMode (self):
+        return self.mode
+
+    def closeEvent(self, event):
+        # do stuff
+        self.underlying_object_exists = False
+        print ('reset underlying objects')
+        self.save_file()
+        print ('saved code')
+        event.accept()  # let the window close
+
+    def check_underlying_object (self):
+        if self.underlying_object_exists == False:
+            print ('init super')
+            super().__init__()
+            print ('super init done')
+            self.underlying_object_exists = True
+
 
     def load_file(self, filename):
         self.filename = filename
@@ -21,6 +69,9 @@ class TextWindow(QTextEdit):
             self.setText(s)
 
     def save_file(self):
+        print ('saving a file ' + self.filename)
+        print ('   contents:')
+        print (self.toPlainText())
         with open(self.filename, 'w') as f:
             f.write(self.toPlainText())
 

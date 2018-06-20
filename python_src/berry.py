@@ -1,14 +1,21 @@
 # berry.py
 from python_src.berry_api import *
 from python_src import eprint
+#from python_src.berry_factory import berry_class_decider
 import threading
 from traceback import print_exc
 from time import sleep
 import ctypes
+from enum import Enum
 
 
 class Berry:
     REG_STATUS = 1
+
+    class BerryClasses(Enum):
+        input = 1
+        output = 2
+        all = 3
 
     # Default stream period is in seconds and is chosen arbitrarily
     # Rate = 1/DEFAULT_STREAM_PERIOD Hz
@@ -21,6 +28,8 @@ class Berry:
         self.addr = address
         self.name = name
         self.berry_type = berry_type
+        # set the berry class based on the type.
+
 
         # ID should not be zero.
         if self.addr == 0:
@@ -65,5 +74,8 @@ class Berry:
 
     def set_status_led(self, val):
         return set_device_multi_values(self.addr, self.REG_STATUS, [val], 1)
+
+   # def get_class(self):
+   #     return berry_class_decider(self.berry_type)
 
 # End class Berry ###

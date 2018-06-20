@@ -10,6 +10,7 @@ import ctypes
 class Berry:
     REG_STATUS = 1
 
+
     # Default stream period is in seconds and is chosen arbitrarily
     # Rate = 1/DEFAULT_STREAM_PERIOD Hz
     DEFAULT_STREAM_PERIOD = 0.05
@@ -21,6 +22,8 @@ class Berry:
         self.addr = address
         self.name = name
         self.berry_type = berry_type
+        # lookup the berry class.
+
 
         # ID should not be zero.
         if self.addr == 0:

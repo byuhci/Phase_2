@@ -1,11 +1,11 @@
 # accelerometer.py
 from python_src import berry_api
-from python_src import berry
+from python_src.berry import Berry
 from struct import pack, unpack
 from time import perf_counter
 from collections import namedtuple
 
-class Accelerometer(berry.Berry):
+class Accelerometer(Berry):
     # Registers
     REG_MOVE_THRESHOLD_L = 2
     REG_MOVE_THRESHOLD_H = 3

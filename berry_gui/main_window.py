@@ -4,7 +4,7 @@ from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 from subwindow import *
 from project_manager import ProjectManager
-
+from python_src.berry import Berry
 
 class MainWindow(QMainWindow):
     OFFSET_FOR_THE_IMAGE = 55
@@ -31,7 +31,7 @@ class MainWindow(QMainWindow):
 
         self.setWindowTitle("Berry GUI")
         self.setGeometry(100, 200, 1280, 775)
-        self.statusBar()
+        self.statusBar().showMessage('idle')
         extract_action = QAction("Save & Exit", self)
         extract_action.setShortcut("Ctrl+q")
         extract_action.setStatusTip("Leave the app")
@@ -69,11 +69,22 @@ class MainWindow(QMainWindow):
         self.toolBar = self.addToolBar("BeRRY")
         self.toolBar.addAction(extract_action_toolbar_berry)
 
-        extract_action_toolbar_berry = QAction(QIcon(icons_path + "camera.png"), "Take Picture Using Webcam", self)
+        extract_action_toolbar_berry = QAction(QIcon(icons_path + "camera.png"), "Take Picture Using Webcamz", self)
         extract_action_toolbar_berry.triggered.connect(self.show_picture)
 
         self.toolBar = self.addToolBar("Camera toolbar")
         self.toolBar.addAction(extract_action_toolbar_berry)
+
+        onlyIoAction = QAction(QIcon(""),"outputs",self)
+        onlyIoAction.triggered.connect(self.showOutputBerries)
+
+        self.toolBar.addAction(onlyIoAction)
+
+        onlyIoAction = QAction(QIcon(""),"inputs",self)
+        onlyIoAction.triggered.connect(self.showInputBerries)
+
+        self.toolBar.addAction(onlyIoAction)
+
 
         extract_action_toolbar_berry = QAction(QIcon(icons_path + "lights.png"), "Flashes the lights", self)
         # extract_action_toolbar_berry.triggered.connect(self.light_sequence)
@@ -146,22 +157,51 @@ class MainWindow(QMainWindow):
     def show_picture(self):
         self.threadpool.start(Worker(self.manager.find_berries, self.signal))
 
-    @pyqtSlot(str)
-    def clicked_berry(self, name):
-        if self.text_window is None:
-            self.text_window = TextWindow()
-            self.text_sub = self.mdiArea.addSubWindow(self.text_window)
-            self.text_sub.setWindowFlags(Qt.WindowCloseButtonHint | Qt.WindowStaysOnTopHint)
+    def showOutputBerries (self):
+        self.threadpool.start(Worker(self.manager.find_berries, self.signal, Berry.BerryClasses.output))
+
+    def showInputBerries (self):
+        self.threadpool.start(Worker(self.manager.find_berries,self.signal, Berry.BerryClasses.input))
+
+    def setupsubwindow (self):
+        self.text_window = TextWindow()
+        self.text_sub = self.mdiArea.addSubWindow(self.text_window)
+        self.text_sub.setWindowFlags(Qt.WindowCloseButtonHint | Qt.WindowStaysOnTopHint)
+
+    def loadupberryfile (self, name):
+        print ('load code for berry named' + name)
         filename = self.manager.pick_berry(name)
         self.text_window.load_file(filename)
         self.text_sub.setWindowTitle(name)
         self.text_window.show()
 
+    @pyqtSlot(str)
+    def clicked_berry(self, name):
+        print ('someone clicked a berry named '+ name)
+        if self.text_window is None:
+            print ('there was no subwindow for the code')
+            self.setupsubwindow()
+            self.loadupberryfile(name)
+            print ('... made a subwindow for code')
+        else:
+            print('subwindow mode is ' + self.text_window.mode.name)
+            if (self.text_window.mode == self.text_window.InputMode.lookingForOutputDevice  and self.text_window.underlying_object_exists):
+                print ('clicked a berry in output device mode... stick it in the code')
+                self.text_window.anOutputWasSelected(name)
+            else:
+                # just in normal mode re make the underlying object if needed.
+                # and always load up the berry code file into the subwindow.
+                print ('clicked a berry, the window already exists, but we are not in select output mode')
+                if (not self.text_window.underlying_object_exists):
+                    self.setupsubwindow()
+                self.loadupberryfile(name)
+
     def save_file(self):
         self.text_window.save_file()
 
     def run_project(self):
-        self.save_file()
+        if (self.text_window.underlying_object_exists):
+            self.text_window.save_file()
         self.threadpool.start(Worker(self.manager.project.run_project))
 
     @pyqtSlot()
@@ -213,7 +253,9 @@ class MainWindow(QMainWindow):
 
     def open_project(self):
         dialog = QFileDialog()
-        filepath = dialog.getExistingDirectory(self, 'Choose existing project or create a new folder', './')
+        filepath = dialog.getExistingDirectory(self,
+                                               'Choose existing project or create a new folder',
+                                               '/msys64/home/mike/code/Phase_2/projects')
         self.manager = ProjectManager(filepath)
         self.manager.sync_project()
 

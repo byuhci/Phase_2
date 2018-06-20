@@ -4,6 +4,8 @@ from berry_project import BerryProject
 import camera
 import cv2
 
+from python_src.berry import Berry
+
 
 class ProjectManager:
     def __init__(self, project_dir):
@@ -24,8 +26,8 @@ class ProjectManager:
         self.project = BerryProject(self.project_name, self.project_path)
         self.project.sync_project()
 
-    def find_berries(self, signal):
-        self.image, self.berry_map = camera.find_berries(self.project.berries)
+    def find_berries(self, signal,class_to_find = Berry.BerryClasses.all):
+        self.image, self.berry_map = camera.find_berries(self.project.berries,class_to_find)
         signal.emit()
 
     def current_image(self):
