@@ -103,8 +103,11 @@ class PictureWindow(QGraphicsView):
         for berry_name in berry_map.keys():
             pos = berry_map[berry_name]
             overlay = BerryOverlay(pos, berry_name, self.click_signal)
+            label = BerryLabel(pos,berry_name,self.click_signal)
             self.clickable_berries[berry_name] = overlay
+            self.clickable_berries[berry_name] = label
             self.scene.addItem(overlay)
+            self.scene.addItem(label)
 
 
 class PictureObject(QGraphicsItem):
@@ -131,6 +134,43 @@ class PictureObject(QGraphicsItem):
         return self.pixmap.width()
 
 
+class BerryLabel (QGraphicsObject):
+
+    def __init__(self, pos, name, signal):
+        super().__init__()
+        x = pos[0]
+        y = pos[1]
+        self.pos = pos
+        self.overlay = QRectF(x - 30, y - 30, 60, 60)
+        self.name = name
+        self.click_signal = signal
+        self.font = QFont()
+        self.font.setFamily("Helvetica")
+        self.font.setPointSize(15)
+
+    def boundingRect(self):
+        return self.overlay
+
+    def shape(self):
+        x = self.pos[0]
+        y = self.pos[1]
+        path = QPainterPath()
+        path.addText(x-40,y-40,self.font,self.name)
+        return path
+
+    def paint(self, painter: QPainter, option: 'QStyleOptionGraphicsItem', widget: typing.Optional[QWidget] = ...):
+        brush = QBrush()
+        brush.setStyle(Qt.SolidPattern)
+        brush.setColor(QColor(255,0,255,127))
+        painter.setPen(QColor(255, 0, 255, 127))
+        painter.setBrush(brush)
+        painter.drawPath(self.shape())
+
+    def mousePressEvent(self, event: 'QGraphicsSceneMouseEvent'):
+        print('Clicked berry via label!')
+        self.click_signal.emit(self.name)
+
+
 class BerryOverlay(QGraphicsObject):
     def __init__(self, pos, name, signal):
         super().__init__()
@@ -152,7 +192,7 @@ class BerryOverlay(QGraphicsObject):
         return path
 
     def paint(self, painter: QPainter, option: 'QStyleOptionGraphicsItem', widget: typing.Optional[QWidget] = ...):
-        painter.setPen(QColor(255, 0, 0, 127))
+        painter.setPen(QColor(255, 0, 255, 127))
         painter.drawPath(self.shape())
 
     def mousePressEvent(self, event: 'QGraphicsSceneMouseEvent'):
