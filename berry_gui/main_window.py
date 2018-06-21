@@ -10,6 +10,8 @@ class MainWindow(QMainWindow):
     OFFSET_FOR_THE_IMAGE = 55
     signal = pyqtSignal()
     clickSignal = pyqtSignal(str)
+    testFilePath = '/msys64/home/mike/code/Phase_2/projects/test'
+    test_mode = True
 
     def __init__(self):
         super().__init__()
@@ -63,10 +65,16 @@ class MainWindow(QMainWindow):
 
         self.setWindowIcon(QIcon(icons_path + "berry_icon.png"))
 
+
         extract_action_toolbar_berry = QAction(QIcon(icons_path + "flatberry.png"), "Connect to the berries", self)
         extract_action_toolbar_berry.triggered.connect(self.open_project)
 
         self.toolBar = self.addToolBar("BeRRY")
+        if self.test_mode:
+            test_label = QLabel("TESTING")
+            self.toolBar.addWidget(test_label)
+            self.open_project()
+            self.show_picture()
         self.toolBar.addAction(extract_action_toolbar_berry)
 
         extract_action_toolbar_berry = QAction(QIcon(icons_path + "camera.png"), "Take Picture Using Webcamz", self)
@@ -252,10 +260,14 @@ class MainWindow(QMainWindow):
         self.show()
 
     def open_project(self):
-        dialog = QFileDialog()
-        filepath = dialog.getExistingDirectory(self,
-                                               'Choose existing project or create a new folder',
-                                               '/msys64/home/mike/code/Phase_2/projects')
+        # for testing.
+        if self.test_mode:
+            filepath = self.testFilePath
+        else:
+            dialog = QFileDialog()
+            filepath = dialog.getExistingDirectory(self,
+                                                   'Choose existing project or create a new folder',
+                                                   '/msys64/home/mike/code/Phase_2/projects')
         self.manager = ProjectManager(filepath)
         self.manager.sync_project()
 

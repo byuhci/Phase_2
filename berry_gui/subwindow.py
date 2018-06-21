@@ -19,10 +19,13 @@ class TextWindow(QTextEdit):
         super().__init__()
         self.underlying_object_exists = True
         self.setAttribute(Qt.WA_DeleteOnClose)
+        self.setMinimumWidth(400)
         doc = self.document()
         font = doc.defaultFont()
         font.setFamily('Courier New')
         doc.setDefaultFont(font)
+        tab_width = 4 # spaces.
+        self.setTabStopWidth(QFontMetrics(font).width(" ") * tab_width)
         self.filename = None
 
     def contextMenuEvent(self, e: QContextMenuEvent):
@@ -161,8 +164,8 @@ class BerryLabel (QGraphicsObject):
     def paint(self, painter: QPainter, option: 'QStyleOptionGraphicsItem', widget: typing.Optional[QWidget] = ...):
         brush = QBrush()
         brush.setStyle(Qt.SolidPattern)
-        brush.setColor(QColor(255,0,255,127))
-        painter.setPen(QColor(255, 0, 255, 127))
+        brush.setColor(QColor(255,0,255,255))
+        painter.setPen(QColor(255, 0, 255, 255))
         painter.setBrush(brush)
         painter.drawPath(self.shape())
 
@@ -192,7 +195,10 @@ class BerryOverlay(QGraphicsObject):
         return path
 
     def paint(self, painter: QPainter, option: 'QStyleOptionGraphicsItem', widget: typing.Optional[QWidget] = ...):
-        painter.setPen(QColor(255, 0, 255, 127))
+        pen = QPen()
+        pen.setColor(QColor(255,0,22,127))
+        pen.setWidth(5)
+        painter.setPen(pen)
         painter.drawPath(self.shape())
 
     def mousePressEvent(self, event: 'QGraphicsSceneMouseEvent'):
